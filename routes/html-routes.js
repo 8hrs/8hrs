@@ -5,7 +5,7 @@ const htmlRoutes = (function (){
 	const router = express.Router();
 
 	router.get("/", function (req, res){
-		res.end("home");
+		res.end("Welcome to 8hrs!");
 	});
 
 	return router;

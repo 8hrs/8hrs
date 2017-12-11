@@ -1,0 +1,32 @@
+{
+  "name": "8hrs",
+  "version": "1.0.0",
+  "description": "8hrs is designed to help workers communicate and organize",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8hrs/8hrs.git"
+  },
+  "keywords": [
+    "union",
+    "organizing",
+    "labor",
+    "workers"
+  ],
+  "author": "the 8hr Team",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/8hrs/8hrs/issues"
+  },
+  "homepage": "https://github.com/8hrs/8hrs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.27.0"
+  }
+}

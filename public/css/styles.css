@@ -1,0 +1,25 @@
+
+#biline {
+    color: white
+
+}
+
+.jumbotron{
+	background-image: url("../images/13215_labor_union_bw_ap_328.jpg");
+	width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#side-pic{
+	width: 90%;
+	height: auto;
+}
+
+
+
+.btn.btn-success {
+    color: #fff;
+    background-color: #00000013,
+    border-color: #4cae4c;
+}

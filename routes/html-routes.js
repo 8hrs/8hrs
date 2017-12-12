@@ -5,7 +5,7 @@ const htmlRoutes = (function (){
 	const router = express.Router();
 
 	router.get("/", function (req, res){
-		res.end("Welcome to 8hrs!");
+		res.sendFile(path.join(__dirname,"../public/index.html"));
 	});
 
 	return router;

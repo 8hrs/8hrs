@@ -18,7 +18,11 @@ app.use(bodyParser.json());
 // Middleware routers
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
-app.use(express.static("public"));
+app.use(express.static("public/"));
+
+// Handlebars
+app.engine("handlebars", handlebars({ defaultLayout: "main"}));
+app.set("view engine", "handlebars");
 
 // Start server
 app.listen(PORT, function(){

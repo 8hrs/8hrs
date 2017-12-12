@@ -8,9 +8,9 @@ const Connection = (function(){
 	} else {
 		connection = mysql.createConnection({
 			port: PORT,
-			host: "localhost",
-			database: "burgers_db",
-			user: "root",
+			host: "y06qcehxdtkegbeb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+			database: "x14009ytzpb9k3uv",
+			user: "vmx3flztkz310b61",
 			password: process.env.MYSQL_PASSWORD
 		});
 	}

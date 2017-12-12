@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 // Middleware routers
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
+app.use(express.static("public"));
 
 // Start server
 app.listen(PORT, function(){

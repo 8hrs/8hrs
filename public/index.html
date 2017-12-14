@@ -77,13 +77,88 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Search for Employer</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+         <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="employer-name" class="col-form-label">Employer:</label>
+            <input type="text" class="form-control" id="employer-name">
+          </div>
+          <div class="form-group">
+            <label for="city" class="col-form-label">City:</label>
+            <input type="text" class="form-control" id="city"></input>
+          </div>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" id="state-dropdown" type="button" data-toggle="dropdown">State
+          <span class="caret"></span></button>
+          <ul id="states" class="dropdown-menu" role="menu" aria-labelledby="states">
+          </ul>
+        </div>
+
+ const statesArray = ["AK - Alaska", 
+                "AL - Alabama", 
+                "AR - Arkansas", 
+                "AS - American Samoa", 
+                "AZ - Arizona", 
+                "CA - California", 
+                "CO - Colorado", 
+                "CT - Connecticut", 
+                "DC - District of Columbia", 
+                "DE - Delaware", 
+                "FL - Florida", 
+                "GA - Georgia", 
+                "GU - Guam", 
+                "HI - Hawaii", 
+                "IA - Iowa", 
+                "ID - Idaho", 
+                "IL - Illinois", 
+                "IN - Indiana", 
+                "KS - Kansas", 
+                "KY - Kentucky", 
+                "LA - Louisiana", 
+                "MA - Massachusetts", 
+                "MD - Maryland", 
+                "ME - Maine", 
+                "MI - Michigan", 
+                "MN - Minnesota", 
+                "MO - Missouri", 
+                "MS - Mississippi", 
+                "MT - Montana", 
+                "NC - North Carolina", 
+                "ND - North Dakota", 
+                "NE - Nebraska", 
+                "NH - New Hampshire", 
+                "NJ - New Jersey", 
+                "NM - New Mexico", 
+                "NV - Nevada", 
+                "NY - New York", 
+                "OH - Ohio", 
+                "OK - Oklahoma", 
+                "OR - Oregon", 
+                "PA - Pennsylvania", 
+                "PR - Puerto Rico", 
+                "RI - Rhode Island", 
+                "SC - South Carolina", 
+                "SD - South Dakota", 
+                "TN - Tennessee", 
+                "TX - Texas", 
+                "UT - Utah", 
+                "VA - Virginia", 
+                "VI - Virgin Islands", 
+                "VT - Vermont", 
+                "WA - Washington", 
+                "WI - Wisconsin", 
+                "WV - West Virginia", 
+                "WY - Wyoming"
+]
+
+        </form>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -94,7 +169,6 @@
 </div>
 
 
-
 <!--js for animation of first button click to section 2-->
    <script type="text/javascript">
         function scroll_to_div(div_id) {
@@ -102,6 +176,7 @@
                     scrollTop: $("#" + div_id).offset().top
                 },
                 'slow');
+            console.log("this is the scroll click")
         }
         
         // $(function(){

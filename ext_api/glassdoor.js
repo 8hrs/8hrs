@@ -9,7 +9,9 @@ const Glassdoor = (function (){
 		})
 		const apiKey = process.env.GLASSDOOR_API_KEY;
 		const partnerId = process.env.GLASSDOOR_PARTNER_ID;
-		let queryUrl = `http://api.glassdoor.com/api/api.htm?t.p=${partnerId}&t.k=${apiKey}&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&userip=${userIp}&city=${city}&q=${companyName}`;
+		const pageNumber = 2;
+		const pageSize = 40;
+		let queryUrl = `http://api.glassdoor.com/api/api.htm?t.p=${partnerId}&t.k=${apiKey}&userip=0.0.0.0&useragent=&format=json&v=1&action=employers&userip=${userIp}&city=${city}&q=${companyName}&pn=${pageNumber}&ps=${pageSize}`;
 		request(queryUrl, function (error, response, body){
 			if (error){
 				console.log(error.stack);
@@ -25,16 +27,17 @@ const Glassdoor = (function (){
 		return gdQuery(city, companyName, callback);
 	}
 	return {
-		gdQuery: gdQuery,
+		// gdQuery: gdQuery,
 		employersByCity: employersByCity
 	}
 })();
 
-Glassdoor.employersByCity("Chicago", "Blue Man", function (res){
+Glassdoor.employersByCity("Chicago", "", function (res){
     console.log('res', res.employers);
 	let employers = [];
 	res.employers.forEach(function (employer){
 		employers.push([employer.name, employer.sectorName, employer.industryName, employer.overallRating]);
 	});
 	console.log("\n\nby City : \n", employers);
+	return employers;
 });

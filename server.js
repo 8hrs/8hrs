@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const handlebars = require("express-handlebars");
 const apiRoutes = require("./controllers/api-controller.js");
 const htmlRoutes = require("./routes/html-routes.js");
-
+const ext_apiRoutes = require("./routes/ext-api-routes.js");
 
 // Set port
 const PORT = process.env.PORT || 3000;
@@ -17,12 +17,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Middleware routers
-// app.use(function(req, res, next){
-// 	console.log("userAgent", req.get("User-Agent"))
-// 	next();
-// });
-
 app.use("/api", apiRoutes);
+app.use("/ext_api", ext_apiRoutes);
 app.use("/", htmlRoutes);
 app.use(express.static("public/"));
 

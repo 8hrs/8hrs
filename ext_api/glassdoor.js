@@ -1,7 +1,6 @@
 const Glassdoor = (function (){
-	// const bodyParser = require("body-parser");
 	const request = require("request");
-	function gdQuery (city = "", state = "", searchTerms = "", callback){
+	function employerQuery (city = "", state = "", searchTerms = "", callback){
 		let userIp;
 		request("https://api.ipify.org/?format=json", function (error, response, body){
 			userIp = JSON.parse(body).ip;
@@ -16,31 +15,14 @@ const Glassdoor = (function (){
 			if (error){
 				console.log(error.stack);
 			}
-			// console.log(response);
 			let employers = JSON.parse(body).response;
-			// console.log('employers', employers);
+			console.log('response', response);
 			return callback(employers);
 		});
 	}
-
-	function employersByCity (city, state = "", searchTerms = "", callback){
-		return gdQuery(city, state, searchTerms, callback);
-	}
 	return {
-		// gdQuery: gdQuery,
-		employersByCity: employersByCity
+		employerQuery: employerQuery
 	}
 })();
 
 module.exports = Glassdoor;
-
-
-// Glassdoor.employersByCity("Chicago", "", function (res){
-//     console.log('res', res.employers);
-// 	let employers = [];
-// 	res.employers.forEach(function (employer){
-// 		employers.push([employer.name, employer.sectorName, employer.industryName, employer.overallRating]);
-// 	});
-// 	console.log("\n\nby City : \n", employers);
-// 	return employers;
-// });

@@ -57,6 +57,10 @@ const statesArray = ["AK - Alaska",
                 "WY - Wyoming"
 ];
 
+$(document).ready(function(){
+	createDropdown(statesArray);
+});
+
 $("#searchSubmit").on("click", function (){
 	console.log("clicked");
 	let employer = $("#employer-name").val();
@@ -70,23 +74,29 @@ $("#searchSubmit").on("click", function (){
 		state: state
 	}
 	console.log(searchObj);
+	searchCampaigns (searchObj, function(result){
+		console.log(result);
+	});
 	searchGlassdoor(searchObj, function(result){
-		console.log(`this is the result being displayed by the callback function... ${result}`)
+		console.log(result[0].featuredReview.cons);
 	});
 });
 
-
-function searchGlassdoor (searchObj, callback){
-	$.post("ext_api/gd/search", JSON.stringify(searchObj)).done(function (data){
+function searchCampaigns (searchObj, callback){
+	$.post("api/campaigns", JSON.stringify(searchObj)).done(function (data){
 		console.log("sending post request");
 		console.log("* data = ", data);
 		return callback(data);
 	});
 }
 
-$(document).ready(function(){
-	createDropdown(statesArray);
-});
+function searchGlassdoor (searchObj, callback){
+	$.post("ext_api/gd/employer-search", JSON.stringify(searchObj)).done(function (data){
+		console.log("sending post request");
+		console.log("* data = ", data);
+		return callback(data);
+	});
+}
 
 function createDropdown (optionArray){
 	optionArray.forEach(function (option){

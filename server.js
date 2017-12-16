@@ -1,32 +1,41 @@
-// Dependencies
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
-const handlebars = require("express-handlebars");
-const apiRoutes = require("./controllers/api-controller.js");
-const htmlRoutes = require("./routes/html-routes.js");
-const ext_apiRoutes = require("./routes/ext-api-routes.js");
-
-// Set port
+const ext_apiRoutes = require("./routes/ext-api-routes.js")
+// Sets up the Express App
+// =============================================================
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Instantiate express server
-const app = express();
+// Requiring our models for syncing
+const db = require("./models");
 
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}));
+// Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Middleware routers
-app.use("/api", apiRoutes);
+// Static directory
+app.use(express.static("public"));
+
+// Routes
+// =============================================================
 app.use("/ext_api", ext_apiRoutes);
-app.use("/", htmlRoutes);
-app.use(express.static("public/"));
+require("./controllers/campaign-api-routes.js")(app);
+require("./controllers/user-api-routes.js")(app);
+require("./controllers/employer-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
-// Handlebars
-app.engine("handlebars", handlebars({ defaultLayout: "main"}));
-app.set("view engine", "handlebars");
-
-// Start server
-app.listen(PORT, function(){
-	console.log("please pay no attention to port", PORT);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

@@ -9,15 +9,15 @@ const ext_apiRoutes = (function(){
 	router.use(bodyParser.urlencoded({extended: false}));
 	router.use(bodyParser.json());
 
-	router.post("/gd/search", function (req, res){
-		console.log("/gd/search");
+	router.post("/employer-search", function (req, res){
+		console.log("/gd/employer-search");
 		let state = JSON.parse(Object.keys(req.body)[0]).state;
 		let city = JSON.parse(Object.keys(req.body)[0]).city;
 		let searchTerms = JSON.parse(Object.keys(req.body)[0]).employer;
 		var results = [];
-		gd.employersByCity(city, state, searchTerms, function (data){
+		gd.employerQuery(city, state, searchTerms, function (data){
 			data.employers.forEach(function (employer){
-				results.push([employer.name, employer.sectorName, employer.industryName, employer.overallRating]);
+				results.push(employer);//.featuredReview.cons);//[employer.name, employer.sectorName, employer.industryName, employer.overallRating]);
 			});
 			console.log("Employers", results);
 			res.json(results);

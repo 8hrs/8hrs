@@ -9,6 +9,10 @@ const apiRoutes = (function(){
 		res.end("api routes");
 	});
 
+	router.post("/campaigns", function (req, res){
+		res.end("placeholder for the result of searching the database for existing campaigns");
+	});
+
 	return router;
 })();
 console.log ("apiController.js loaded");

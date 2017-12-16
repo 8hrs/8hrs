@@ -1,62 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-
-
-	<title>8hrs</title>
-</head>
-<body>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
+  <title>8hrs</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Your platform (jquery) scripts. -->
+  <script src="https://surveyjs.azureedge.net/0.98.1/survey.jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
 </head>
 <body>
 
-<div class="jumbotron text-center">
-  <img src="images/8hrs-logo.png">
-  <p id="biline"><em>“The ability of employees to join a labor union is the single largest unclaimed <br>legal right to additional personal wealth in America today.”</em> </p> 
-  <button type="button" class="btn btn-success" onclick="scroll_to_div('full-options-container')">Learn More</button>
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <a href="index.html"><li>Home</li></a>
+      <a href="#"><li>Resources</li></a>
+    </ul>
+  </div>
+</nav>
 
 
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-     <img id="side-pic" src="images/side-pic.png">
+    <!--HERO IMAGE-->
+    <div id="hero-image" class="jumbotron text-center">
+      <img src="images/8hrs-logo.png">
+      <p id="biline"><em>“The ability of employees to join a labor union is the single largest unclaimed <br>legal right to additional personal wealth in America today.”</em> </p> 
+      <button id="header-button" type="button" class="btn btn-secondary" onclick="scroll_to_div('middle-section')">Learn More</button>
+
+
     </div>
-    <div class="col-sm-6">
-      <h3>Why Unionize?</h3>
-      <p>Americans want more influence in the workplace to win better wages, better benefits, and more flexible work schedules—all of which can be gained through joining a union.</p>
 
-      <p>8hrs allow individuals to anonymously sign up to a labor organization and survey their concerns.</p>
+    <!--ABOUT THIS APP INFO-->
+    <div id="middle-section" class="container">
+      <div class="row">
+        <div class="col-sm-6">
+         <img id="side-pic" src="images/side-pic.png">
+       </div>
+       <div id="description" class="col-sm-5" >
+        <h1 id="union-header">Why Unionize?</h1>
+        <hr>
+        <p>Americans want more influence in the workplace to win better wages, better benefits, and more flexible work schedules—all of which can be gained through joining a union.</p>
 
+        <p><span style="color:#abdc3b">8hrs</span> allow individuals to anonymously sign up to a labor organization and survey their concerns.</p>
+      </div>
+    </div>
+  </div>
 
- 
+  <!--GET STARTED SECTION-->
+  <div id="section-three" class="jumbotron text-center">
+    <img src="images/security-icon-07.png" width="200px" height="auto">
+    <p id="biline"><em>Organzing digitally reduces the concerns of individuals <br>feeling they would be who would be spied on, <br>harassed, pressured, threatened, suspended, fired, <br>deported or otherwise victimized <br>if they publically attempted to sign up for a union. </em> </p> 
+    <!-- Button trigger modal -->
+    <button id="header-button" type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">Let's Get Started</button>
+  </div>
 
-</p>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Search for Employer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="employer-name" class="col-form-label">Employer:</label>
+            <input type="text" class="form-control" id="employer-name">
+          </div>
+          <div class="form-group">
+            <label for="city" class="col-form-label">City:</label>
+            <input type="text" class="form-control" id="city"></input>
+          </div>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" id="state-dropdown" type="button" data-toggle="dropdown">State
+          <span class="caret"></span></button>
+          <ul id="states" class="dropdown-menu" role="menu" size="8" aria-labelledby="states">
+          </ul>
+        </div>
+
+        </form>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="searchSubmit" class="btn btn-default">Search</button>
+      </div>
     </div>
   </div>
 </div>
 
+
+<!--js for animation of first button click to section 2-->
+   <script type="text/javascript">
+        function scroll_to_div(div_id) {
+            $('html,body').animate({
+                    scrollTop: $("#" + div_id).offset().top
+                },
+                'slow');
+            console.log("this is the scroll click")
+        }
+        
+        // $(function(){
+        //   $('a.button').on('click')
+        // })
+    </script>
+    <script src="js/index.js"></script>
+
 </body>
 </html>
 
-	

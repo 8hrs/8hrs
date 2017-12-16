@@ -7,6 +7,7 @@ var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV;// || 'development';
 if (env){
   console.log("NODE_ENV available");
+  console.log(NODE_ENV);
 }else{
   console.log("NODE_ENV not available");
 }

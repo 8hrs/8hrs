@@ -74,20 +74,20 @@ $("#searchSubmit").on("click", function (){
 		state: state
 	}
 	console.log(searchObj);
-	// searchCampaigns (searchObj, function(result){
-	// 	console.log(result);
-	// });
+	searchEmployers (searchObj, function(result){
+		console.log(result);
+	});
 	searchGlassdoor(searchObj, function(result){
 		console.log("result", result);
 	});
 });
 
-function searchCampaigns (searchObj, callback){
-	$.post("api/campaigns", JSON.stringify(searchObj)).done(function (data){
-		console.log("sending post request");
-		console.log("* data = ", data);
-		return callback(data);
-	});
+function searchEmployers (searchObj, callback){
+        $.get("/employers/"+searchObj.employer, JSON.stringify(searchObj)).done(function (data){
+                console.log("sending get request");
+                console.log("* data = ", data);
+                return callback(data);
+        });
 }
 
 function searchGlassdoor (searchObj, callback){

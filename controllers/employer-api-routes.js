@@ -20,11 +20,11 @@ module.exports = function(app) {
     });
     
 
-//GOOD find employer by employer ID
-    app.get("/employers/:id", function(req, res) {
+//GOOD find employer by employer name
+    app.get("/employers/:employername", function(req, res) {
         db.Employer.findOne({
             where: {
-                id: req.params.id
+                employerName: req.params.employername
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
@@ -32,6 +32,17 @@ module.exports = function(app) {
             });
     });
 
+//GOOD find employer by employer ID
+app.get("/employers/:id", function(req, res) {
+    db.Employer.findOne({
+        where: {
+            id: req.params.id
+        },
+        include: [db.Campaign]
+    }).then(function(dbEmployer) {
+        res.json(dbEmployer);
+        });
+});
 
 //GOOD update employer information
     app.put("/employers/", function(req, res) {

@@ -1,14 +1,16 @@
+/* NOT IN USE RIGHT NOW - KEEPING FOR FUTURE DEVELOPMENT FOR CHARTS*/
+
 code{
   background: #050505;
   color: #e63f87;
-  margin-top: 2rem;
+  margin-top: 0;
   max-width: ;
   width: 95%;
   border-radius: 1rem;
   padding: 2rem;
   box-sizing: border-box;
 }
-.yummy-pie{
+*/.yummy-pie{
   position: relative;
 }
 .pie{
@@ -31,7 +33,7 @@ code{
   position: absolute;
   padding-left: .3ch;
   left: 0;
-  top: calc(50% - 3.1rem);
+  top: calc(50% - 3.1rem);*/
   
   text-align: center;
   font-size: 4rem;

@@ -213,9 +213,22 @@
             <label for="goal_id" class="control-label">8. Target Membership Goal</label>
             <input type="text" class="form-control" id="goal_id" name="goal" placeholder="eg. 100">
           </div>
+          <div>
+          <button id="submit-button" type="submit" class="btn btn-primary">SUBMIT</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+        function scroll_to_div(div_id) {
+            $('html,body').animate({
+                    scrollTop: $("#" + div_id).offset().top
+                },
+                'slow');
+            console.log("this is the scroll click")
+        }
+    </script>
 
 </body>
 

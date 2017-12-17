@@ -1,5 +1,6 @@
 body{
     margin: 0px
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 h1{
@@ -234,7 +235,7 @@ h3{
 #newcam-headertext{
   font-size: 50px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white
@@ -244,12 +245,72 @@ h3{
     font-size: 18px;
     font-weight: lighter;
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+#last-section{
+  width: 100%;
+  background-color: #232323;
+  height: 500px
+}
+
+#target-bar-section{
+  margin-top: 250px
+}
+
+#join-section-text{
+  margin-top: 100px;
+  padding: 30px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: lighter;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 1px
+}
+
+
+
+#join-header{
+   font-size: 70px;
+  color: #abdc3b;
+}
+
+#join-body{
+  font-size: 15px;
+  color: white;
+  
+}
+#join-button{
+    background-color: #fff0;
+  border: solid;
+  border-color: #abdc3b;
+  color: white
+}
+
+#target-status{
+    background-color: #fff0;
+  border: solid;
+  border-color: #01b9ae;
+  color: white;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+ letter-spacing: 1PX
+}
+/*------------------------BAR GRAPH------------------*/
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #01b9ae;
+}
+
+
 /*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
 #middle-section{
   width: 100%;

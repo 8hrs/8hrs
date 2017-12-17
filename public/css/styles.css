@@ -5,8 +5,13 @@ body{
 h1{
     color: #abdc3b;
     font-size: 18px;
-    margin-bottom: 2px
+    margin-bottom: 2px;
+    margin-top: 20px;
 
+
+}
+#exampleModalLabel{
+  font-size: 22px
 }
 
 #found-heroimage{
@@ -17,6 +22,13 @@ h1{
 
 nav{
   height: 0px
+}
+
+#campain-name{
+    color: #00B9AE;
+    font-size: 30px;
+    margin-bottom: 8px
+
 }
 
 #union-header{
@@ -45,7 +57,7 @@ nav{
 
 }
 
-#biline {
+.biline {
     color: white;
     font-size: 16px
 
@@ -117,7 +129,7 @@ background-color: black;
     background-repeat: no-repeat;
   
 }
-
+/*------------------------FOUND PAGE SECTION 2------------------*/
 #api-heroimage{
     width: 100%;
     height: auto;
@@ -129,34 +141,72 @@ background-color: black;
   margin-left: 0px;
   margin-right: 0px;
   padding-right: 10px;
-  margin-top: 40px;
-  background-color: #f5f5f5b3;
-  border-radius: 10px
-
+  padding-top: 10px;
+  margin-top: 170px;
+  background-color: #555555a6;
+/*  border-radius: 5px
+*/
 }
+
 
 #api-text{
   font-size: 50px;
   margin-left: 0px;
-  margin-top: 300px;
-  padding-top: 90px;
   padding-left: 0px;
   line-height: 45px;
-  height: 500px;
   color: white;
-
- 
+padding-top: 450px;
 
 }
 
+
+#api-text-header{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  line-height: 26px
+}
+
+.api-messagetocolleagues{
+  color: white
+}
+
+h3{
+ font-size: 20px;
+  color: #abdc3b
+}
+
+/*------------------------FOUND PAGE SECTION 2 END------------------*/
+
+/*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
+#newcamp-heroimage{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#newcam-headertext{
+  font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white
+}
+
+#biline-bodytext{
+    font-size: 18px;
+    font-weight: lighter;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
 #middle-section{
-  margin: 0px;
-  padding-right: 0px;
   width: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 
 }
 
@@ -175,6 +225,11 @@ background-color: black;
   z-index: 2
 }
 
+#surveyContainer{
+  margin: 10px;
+  padding: 10px;
+}
+
 #section-three{
     background-image: url("../images/strike_medium_image.jpg");
     width: 100%;
@@ -191,17 +246,17 @@ background-color: black;
 }
 
 
-#small-logo{
+.small-logo{
     width: 150px;
     height: auto;
 
 }
 
 #title-text{
-  font-size: 50px;
+  font-size: 70px;
   margin-left: 50px;
   padding-left: 80px;
-  line-height: 45px
+  line-height: 60px
 }
 
 
@@ -231,11 +286,13 @@ font-size: 50px;
 }
 
 
+
 #side-pic{
 	width: 100%;
 	height: auto;
-    padding-top: 25px;
-    padding-bottom: 50px
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
 
 
 }

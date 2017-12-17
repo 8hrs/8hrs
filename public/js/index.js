@@ -74,13 +74,19 @@ $("#searchSubmit").on("click", function (){
 		state: state
 	}
 	console.log(searchObj);
+        
 	searchEmployers (searchObj, function(result){
 		console.log(result);
 	});
 	searchGlassdoor(searchObj, function(result){
 		console.log("result", result);
+
 	});
+	// searchGlassdoor(searchObj, function(result){
+	// 	console.log("result", result);
+	// });
 });
+
 
 function searchEmployers (searchObj, callback){
         $.get("/employers/"+searchObj.employer, JSON.stringify(searchObj)).done(function (data){
@@ -88,7 +94,7 @@ function searchEmployers (searchObj, callback){
                 console.log("* data = ", data);
                 return callback(data);
         });
-}
+
 
 function searchGlassdoor (searchObj, callback){
 	$.post("ext_api/employer-search", JSON.stringify(searchObj)).done(function (data){

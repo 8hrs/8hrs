@@ -10,6 +10,9 @@ h1{
 
 
 }
+#exampleModalLabel{
+  font-size: 22px
+}
 
 #found-heroimage{
     width: 100%;
@@ -54,7 +57,7 @@ nav{
 
 }
 
-#biline {
+.biline {
     color: white;
     font-size: 16px
 
@@ -126,7 +129,7 @@ background-color: black;
     background-repeat: no-repeat;
   
 }
-
+/*------------------------FOUND PAGE SECTION 2------------------*/
 #api-heroimage{
     width: 100%;
     height: auto;
@@ -138,34 +141,72 @@ background-color: black;
   margin-left: 0px;
   margin-right: 0px;
   padding-right: 10px;
-  margin-top: 40px;
-  background-color: #f5f5f5b3;
-  border-radius: 10px
-
+  padding-top: 10px;
+  margin-top: 170px;
+  background-color: #555555a6;
+/*  border-radius: 5px
+*/
 }
+
 
 #api-text{
   font-size: 50px;
   margin-left: 0px;
-  margin-top: 300px;
-  padding-top: 90px;
   padding-left: 0px;
   line-height: 45px;
-  height: 500px;
   color: white;
-
- 
+padding-top: 450px;
 
 }
 
+
+#api-text-header{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  line-height: 26px
+}
+
+.api-messagetocolleagues{
+  color: white
+}
+
+h3{
+ font-size: 20px;
+  color: #abdc3b
+}
+
+/*------------------------FOUND PAGE SECTION 2 END------------------*/
+
+/*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
+#newcamp-heroimage{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#newcam-headertext{
+  font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white
+}
+
+#biline-bodytext{
+    font-size: 18px;
+    font-weight: lighter;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
 #middle-section{
-  margin: 0px;
-  padding-right: 0px;
   width: 100%;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 
 }
 
@@ -200,7 +241,7 @@ background-color: black;
 }
 
 
-#small-logo{
+.small-logo{
     width: 150px;
     height: auto;
 
@@ -240,12 +281,13 @@ font-size: 50px;
 }
 
 
+
 #side-pic{
 	width: 100%;
 	height: auto;
-    padding-top: 25px;
-    padding-bottom: 50px;
-    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
 
 
 }

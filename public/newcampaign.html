@@ -18,48 +18,50 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Your platform (jquery) scripts. -->
-  <script src="https://surveyjs.azureedge.net/0.98.1/survey.jquery.min.js"></script>
+ <!-- Your platform (jquery) scripts. -->
+<script src="https://surveyjs.azureedge.net/0.98.3/survey.jquery.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body id="found-body">
-
-<!--Navagation Bar-->
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <a href="index.html"><li>Home</li></a>
-      <a href="resources.html"><li>Resources</li></a>
-    </ul>
-  </div>
-</nav>
-<!--Navagation Bar End-->
-
-<!--Top Black bar with logo-->
-<div id="black-header" class="jumbotron text-center black-header">
-  <img id="small-logo" src="images/8hrs-layout-little-08.png">
-</div>
-
-
-<div class="container-fluid icon">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <img id="lets-start" src="images/new-campaign-logo-09.png"">
+  <!--HAMBURGER SIDEBAR-->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="index.html"><li>Home</li></a>
+        <a href="resources.html"><li>Resources</li></a>
+      </ul>
     </div>
+  </nav>
+  <!--HAMBURGER SIDEBAR END-->
+
+
+  <!--Top Black bar with logo-->
+  <div class="jumbotron text-center black-header">
+    <img class="small-logo" src="images/8hrs-layout-little-08.png">
   </div>
-</div>
-
- <!--Top Black bar with logo-->
-  
+  <!--Navagation Bar End-->
 
 
-<!-- Page Content -->      
-                <div class="row">
+<!--Hero image-->
+  <div>
+    <img id="newcamp-heroimage" src="images/new-camapign-header.png">
+<!--     <img id="lets-start" src="images/new-campaign-logo-09.png">
+ -->    <h1 id="newcam-headertext" class="text-center">LET'S START<BR>A CAMPAIGN</h1>
+         <p id="biline-bodytext" class="text-center"><em>Congrats on taking the first step towards<br>claiming your rights.<br>Fill out this form to get the ball rolling,<br> you will have a network of support in no time!</em></p>
+    <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+  </div>
+  <!--Hero image-->
+
+
+
+
+<!-- Page Content MHIRRA YOU CAN ADD THE INPUT FIELDS HERE:) -->      
+                <div id="form" class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div id="surveyContainer"></div>
                     </div>
@@ -71,6 +73,15 @@
 
 <script type="text/javascript">
 
+        function scroll_to_div(div_id) {
+            $('html,body').animate({
+                    scrollTop: $("#" + div_id).offset().top
+                },
+                'slow');
+            console.log("this is the scroll click")
+        }
+
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
 }
@@ -81,7 +92,7 @@ function w3_close() {
   
 Survey.Survey.cssType = "bootstrap";
 
-var surveyJSON = {pages:[{elements:[{type:"text",isRequired:true,name:"Employer"},{type:"text",isRequired:true,name:"City",placeHolder:"eg. Chicago",size:32,titleLocation:"top"},{type:"text",isRequired:true,name:"State",placeHolder:"eg. Illinois",startWithNewLine:false},{type:"dropdown",choices:["Education ","Tech ","Finance"],choicesOrder:"asc",name:"Industry"},{type:"checkbox",choices:["Wages","Benefits","Gender equality","Racial equality","Age equality","Working Conditions","Other"],name:"Concerns"},{type:"comment",name:"What message would you like to share with fellow colleagues? "}],name:"page1"}]}
+var surveyJSON = {pages:[{elements:[{type:"text",isRequired:true,name:"Campaign Name"},{type:"text",isRequired:true,name:"Employer"},{type:"text",isRequired:true,name:"City",placeHolder:"eg. Chicago",size:32,titleLocation:"top"},{type:"text",isRequired:true,name:"State",placeHolder:"eg. Illinois",startWithNewLine:false},{type:"dropdown",name:"Industry",choices:["Education ","Tech ","Finance"],choicesOrder:"asc"},{type:"checkbox",name:"Concerns",choices:["Wages","Benefits","Gender equality","Racial equality","Age equality","Working Conditions","Other"]},{type:"comment",name:"What message would you like to share with fellow colleagues? "},{type:"text",name:"Target Membership Goal"}],name:"page1"}]}
 
 function sendDataToServer(survey) {
     survey.sendResult('c08910c3-b912-4ed9-99c9-b5e4066e33c9');

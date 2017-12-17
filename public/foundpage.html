@@ -127,19 +127,31 @@
   </div>
 </div>
 
-<div id="" class="container-fluid">
+ <!--ABOUT THIS APP INFO-->
+
+
+
+ <div id="last-section" class="container-fluid">
   <div class="row">
-    <div id="graph-goeshere" class="col-lg-6"> 
-
-    </div>
-    <div id="join-info" class="col-lg-6"> 
-      <p>Now that you know a little more about this campaign to get organized, take the next step in particpateing. Join this campaign and become a part of the network of change!</p>
+    <div class="col-sm-2" ></div>
+    <div class="col-sm-4" id="join-section-text">
+      <h3 id="join-header">JOIN!</h3>
+      <p id="join-body"><em>Now that you know a little more about this campaign towards getting organized, take the next step and participate. Join this campaign and become a part of a network of change!</em></p>
       <button id="join-button" type="submit" class="btn btn-primary">JOIN THIS CAMPAIGN!</button>
-
-
+    </div>
+    <div class="col-sm-6" id="target-bar-section">
+       <div class="modal-div-canvas js-chart" style="width: 70%">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <br>
+            <button id="target-status" class="btn btn-primary" onclick="move()">SEE MEMBERSHIP PROGRESS</button>
+        </div>
     </div>
   </div>
-</div>      
+</div>
+
+  <!--ABOUT THIS APP INFO-->
 
 
 
@@ -158,6 +170,22 @@
                 'slow');
             console.log("this is the scroll click")
         }
+
+
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 60) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+
     </script>
 </body>
 </html>

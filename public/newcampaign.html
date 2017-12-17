@@ -1,98 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Let's Start a Campaign</title>
-	  <!-- Your platform (jquery) scripts. -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Let's Start a Campaign</title>
+  <!-- Your platform (jquery) scripts. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Your platform (jquery) scripts. -->
-  <script src="https://surveyjs.azureedge.net/0.98.1/survey.jquery.min.js"></script>
+  <script src="https://surveyjs.azureedge.net/0.98.3/survey.jquery.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
+
 <body id="found-body">
+  <!--HAMBURGER SIDEBAR-->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="resources.html">
+          <li>Resources</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <!--HAMBURGER SIDEBAR END-->
 
-<!--Navagation Bar-->
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <a href="index.html"><li>Home</li></a>
-      <a href="resources.html"><li>Resources</li></a>
-    </ul>
+
+  <!--Top Black bar with logo-->
+  <div class="jumbotron text-center black-header">
+    <img class="small-logo" src="images/8hrs-layout-little-08.png">
   </div>
-</nav>
-<!--Navagation Bar End-->
-
-<!--Top Black bar with logo-->
-<div id="black-header" class="jumbotron text-center black-header">
-  <img id="small-logo" src="images/8hrs-layout-little-08.png">
-</div>
+  <!--Navagation Bar End-->
 
 
-<div class="container-fluid icon">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <img id="lets-start" src="images/new-campaign-logo-09.png"">
+  <!--Hero image-->
+  <div>
+    <img id="newcamp-heroimage" src="images/new-camapign-header.png">
+    <!--     <img id="lets-start" src="images/new-campaign-logo-09.png">
+ -->
+    <h1 id="newcam-headertext" class="text-center">LET'S START
+      <BR>A CAMPAIGN</h1>
+    <p id="biline-bodytext" class="text-center">
+      <em>Congrats on taking the first step towards
+        <br>claiming your rights.
+        <br>Fill out this form to get the ball rolling,
+        <br> you will have a network of support in no time!</em>
+    </p>
+    <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+  </div>
+  <!--Hero image-->
+
+  <!-- Survey Form -->
+  <div id="form" class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div id="surveyContainer">
+
+        <!-- Campaign Name-->
+        <div class="form-group">
+          <label for="campaign_name_id" class="control-label">1. * Campaign Name</label>
+          <input type="text" class="form-control" id="campaign_name_id" name="employer_name" placeholder="Campaign Name">
+        </div>
+
+        <!-- Employer Name-->
+        <div class="form-group">
+          <label for="employer_name_id" class="control-label">2. * Employer</label>
+          <input type="text" class="form-control" id="employer_name_id" name="employer_name" placeholder="Employer">
+        </div>
+
+        <!-- City -->
+        <div class="form-group">
+          <label for="city_id" class="control-label">3. * City</label>
+          <input type="text" class="form-control" id="city_id" name="city" placeholder="eg. Chicago">
+        </div>
+
+        <!-- State Dropdown -->
+        <div class="form-group">
+          <label for="state_id" class="control-label">4. * State</label>
+          <select class="form-control" id="state_id">
+            <option value="AL - Alabama">AL - Alabama</option>
+            <option value="AK - Alaska">AK - Alaska</option>
+            <option value="AZ - Arizona">AZ - Arizona</option>
+            <option value="AR - Arkansas">AR - Arkansas</option>
+            <option value="CA - California">CA - California</option>
+            <option value="CO - Colorado">CO - Colorado</option>
+            <option value="CO - Connecticut">CO - Connecticut</option>
+            <option value="DE - Delaware">DE - Delaware</option>
+            <option value="DC - District Of Columbia">DC - District Of Columbia</option>
+            <option value="FL - Florida">FL - Florida</option>
+            <option value="GA - Georgia">GA - Georgia</option>
+            <option value="HI - Hawaii">HI - Hawaii</option>
+            <option value="ID - Idaho">ID - Idaho</option>
+            <option value="IL - Illinois">IL - Illinois</option>
+            <option value="IN - Indiana">IN - Indiana</option>
+            <option value="IA - Iowa">IA - Iowa</option>
+            <option value="KS - Kansas">KS - Kansas</option>
+            <option value="KY - Kentucky">KY - Kentucky</option>
+            <option value="LA - Louisiana">LA - Louisiana</option>
+            <option value="ME - Maine">ME - Maine</option>
+            <option value="MD - Maryland">MD - Maryland</option>
+            <option value="MA - Massachusetts">MA - Massachusetts</option>
+            <option value="MI - Michigan">MI - Michigan</option>
+            <option value="MN - Minnesota">MN - Minnesota</option>
+            <option value="MS - Mississippi">MS - Mississippi</option>
+            <option value="MO - Missouri">MO - Missouri</option>
+            <option value="MT - Montana">MT - Montana</option>
+            <option value="NE - Nebraska">NE - Nebraska</option>
+            <option value="NV - Nevada">NV - Nevada</option>
+            <option value="NH - New Hampshire">NH - New Hampshire</option>
+            <option value="NJ - New Jersey">NJ - New Jersey</option>
+            <option value="NM - New Mexico">NM - New Mexico</option>
+            <option value="NY - New York">NY - New York</option>
+            <option value="NC - North Carolina">NC - North Carolina</option>
+            <option value="ND - North Dakota">ND - North Dakota</option>
+            <option value="OH - Ohio">OH - Ohio</option>
+            <option value="OK - Oklahoma">OK - Oklahoma</option>
+            <option value="OR - Oregon">OR - Oregon</option>
+            <option value="PA - Pennsylvania">PA - Pennsylvania</option>
+            <option value="RI - Rhode Island">RI - Rhode Island</option>
+            <option value="SC - South Carolina">SC - South Carolina</option>
+            <option value="SD - South Dakota">SD - South Dakota</option>
+            <option value="TN - Tennessee">TN - Tennessee</option>
+            <option value="TX - Texas">TX - Texas</option>
+            <option value="UT - Utah">UT - Utah</option>
+            <option value="VT - Vermont">VT - Vermont</option>
+            <option value="VA - Virginia">VA - Virginia</option>
+            <option value="WA - Washington">WA - Washington</option>
+            <option value="WV - West Virginia">WV - West Virginia</option>
+            <option value="WI - Wisconsin">WI - Wisconsin</option>
+            <option value="WY - Wyoming">WY - Wyoming</option>
+
+
+          </select>
+        </div>
+
+        <!-- Industry Dropdown -->
+        <div class="form-group">
+          <label for="industry_id" class="control-label">5. Industry</label>
+          <select class="form-control" id="industry_id">
+            <option value="1">Industry 1</option>
+            <option value="2">Industry 2</option>
+            <option value="3">Industry 3</option>
+          </select>
+        </div>
+
+        <!-- Concerns - Checkboxes -->
+        <label for="concerns-checkbox">6. Concerns</label>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="wages"> Wages</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="benefits"> Benefits</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="genderequality"> Gender equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="racialequality"> Racial equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="ageequality"> Age equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="workingconditions">Working Conditions</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" value="other"> Other</label>
+        </div>
+        <p>
+        </p>
+        <p>
+
+          <!-- Comment -->
+          <div class="form-group">
+            <label for="comment">7. What message would you like share with fellow colleagues? This is the first thing people will see about your
+              petition. Get their attention by entering a message that focuses on the change you’d like them to support.
+            </label>
+            <textarea class="form-control" rows="10" id="comment"></textarea>
+          </div>
+
+          <!-- Target Membership Goal -->
+          <div class="form-group">
+            <label for="goal_id" class="control-label">8. Target Membership Goal</label>
+            <input type="text" class="form-control" id="goal_id" name="goal" placeholder="eg. 100">
+          </div>
+      </div>
     </div>
   </div>
-</div>
-
- <!--Top Black bar with logo-->
-  
-
-
-<!-- Page Content -->      
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div id="surveyContainer"></div>
-                    </div>
-                </div>
-         
-<!-- /#page-content-wrapper -->
-
-
-
-<script type="text/javascript">
-
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-
-  
-Survey.Survey.cssType = "bootstrap";
-
-var surveyJSON = {pages:[{elements:[{type:"text",isRequired:true,name:"Employer"},{type:"text",isRequired:true,name:"City",placeHolder:"eg. Chicago",size:32,titleLocation:"top"},{type:"text",isRequired:true,name:"State",placeHolder:"eg. Illinois",startWithNewLine:false},{type:"dropdown",choices:["Education ","Tech ","Finance"],choicesOrder:"asc",name:"Industry"},{type:"checkbox",choices:["Wages","Benefits","Gender equality","Racial equality","Age equality","Working Conditions","Other"],name:"Concerns"},{type:"comment",name:"What message would you like to share with fellow colleagues? "}],name:"page1"}]}
-
-function sendDataToServer(survey) {
-    survey.sendResult('c08910c3-b912-4ed9-99c9-b5e4066e33c9');
-}
-
-var survey = new Survey.Model(surveyJSON);
-$("#surveyContainer").Survey({
-    model: survey,
-    onComplete: sendDataToServer
-});
-</script>
 
 </body>
+
 </html>

@@ -10,8 +10,16 @@ h1{
 
 
 }
+
+
+a.list-group-item, button.list-group-item{
+  color: #279989;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
 #exampleModalLabel{
-  font-size: 22px
+  font-size: 22px;
+  color:#279989 
 }
 
 #found-heroimage{
@@ -57,11 +65,16 @@ nav{
 
 }
 
-.biline {
+#biline-one{
     color: white;
     font-size: 16px
-
 }
+
+#biline-two{
+    color: white;
+    font-size: 16px
+}
+
 #org-found{
     align-content: center;
     width: 300px;
@@ -176,6 +189,39 @@ h3{
   color: #abdc3b
 }
 
+#resources-heroimage{
+     width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#resources-headertext{
+   font-size: 80px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white
+}
+
+#resourse-links{
+  margin-top: 40px
+}
+
+#submit-button{
+  background-color: #fff0;
+  border: solid;
+  border-color: #abdc3b;
+  color: white
+}
+
+.form-control{
+  background-color: #fff0;
+  border: solid;
+  border-color: #abdc3b;
+  border-width: 1px;
+  color: white
+}
 /*------------------------FOUND PAGE SECTION 2 END------------------*/
 
 /*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/

@@ -1,19 +1,10 @@
 <div align="center">
-	<img src="public/images/8hrs-logo.png"><br>
+	<img src="public/images/header-for-readme.png"><br>
 </div>
 
 -----------------
 ## Summary
 **8hrs** is web application designed and developed by Team [Haymarket](https://github.com/8hrs) to help workers communicate and organize.
-
-## Members of Team [Haymarket](https://github.com/8hrs):
-* Dennis Hodges - [fermentationist](https://github.com/fermentationist)
-* Jang Yurai - [jangyjang](https://github.com/jangyjang)
-* Jessica Toro-Pacheco - [jessicatoro2](https://github.com/jessicatoro2)
-* Mhirra Yung - [lookatdmoon](https://github.com/lookatdmoon)
-
-
-![builtwithlove](http://forthebadge.com/images/badges/built-with-love.svg)
 
 ## Application Concept
 Our app will allow individuals at an organization communicate and to start to organize the beginning stages of a labor organization. Participation made digitally will reduce the concerns of individuals feeling they would be who would be spied on, harassed, pressured, threatened, suspended, fired, deported or otherwise victimized if they publically attempted to even show interest in joining a union.
@@ -31,12 +22,6 @@ We wanted to create a simple yet appealing interface that would allow individual
 
 ## Technologies utilized - TBD!!!
 
-| Technology | Description |
-| ------------- | ------------- |
-|    |  ------------- |
-|  |  ------------- |
-|  | ------------- |
-
 Technology:
 HTML
 CSS
@@ -50,15 +35,15 @@ Heroku
 New Library
 
 APIs
-
-* [Firebase](https://firebase.google.com/) - Cloud hosted database
+* [Glassdoor] (https://www.glassdoor.com/developer/companiesApiActions.htm) - Company information
 
 Libraries:
 * [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/)
 
+![Built with Handlebars](http://pixel-cookers.github.io/built-with-badges/handlebars/handlebars-long-flat.png)
 
 ## What's Included
-Within the download archive you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+Within the download archive you'll find the following directories and files, logically grouping common assets and utilizes the MVC Framework and Application Structure. You'll see something like this:
 
 ```
 8hrs/
@@ -67,15 +52,23 @@ Within the download archive you'll find the following directories and files, log
 │   │   └── connection.js
 ├── controllers/
 │   │   ├── api-controller.js
+├── ext_api/
+│   │   ├── glassdoor.js
 ├── models/
 │   │   ├── index.js
 ├── public/
 │   │   ├── css
 │   │   │   └── styles.css
+│   │   ├── images...
 │   │   └── js
+│   │   │   └── index.js
 │   │   │   └── search.js
+│   │   └── foundpage.html
+│   │   └── index.html
+│   │   └── newcampaign.html
 ├── routes/
-│   │   └── html-routs.js
+│   │   └── ext-api-routes.js
+│   │   └── html-routes.js
 ├── views/
 │   │   └── index.handlebars
 ├── .gitignore
@@ -86,6 +79,13 @@ Within the download archive you'll find the following directories and files, log
 ├── schema.sql
 ├── server.js
 ```
-
 ## Future development
-* Things.....
+* User Login
+
+## Members of Team [Haymarket](https://github.com/8hrs):
+* Dennis Hodges - [fermentationist](https://github.com/fermentationist)
+* Jang Yurai - [jangyjang](https://github.com/jangyjang)
+* Jessica Toro-Pacheco - [jessicatoro2](https://github.com/jessicatoro2)
+* Mhirra Yung - [lookatdmoon](https://github.com/lookatdmoon)
+
+![builtwithlove](http://forthebadge.com/images/badges/built-with-love.svg)

@@ -9,7 +9,7 @@ const ext_apiRoutes = (function(){
 	router.use(bodyParser.urlencoded({extended: false}));
 	router.use(bodyParser.json());
 
-	router.post("/employer-search", function (req, res){
+	router.get("/employer-search", function (req, res){
 		console.log("/gd/employer-search");
 		let state = JSON.parse(Object.keys(req.body)[0]).state;
 		let city = JSON.parse(Object.keys(req.body)[0]).city;

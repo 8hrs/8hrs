@@ -1,5 +1,5 @@
 var db = require("../models");
-
+console.log("employer-api-routes.js loaded.");
 module.exports = function(app) {
 
 //GOOD create an employer
@@ -21,28 +21,43 @@ module.exports = function(app) {
     
 
 //GOOD find employer by employer name
-    app.get("/employers/:employername", function(req, res) {
+    app.get("/employers/:employerName", function(req, res) {
         db.Employer.findOne({
             where: {
-                employerName: req.params.employername
+                employerName: req.params.employerName
+            },
+            include: [db.Campaign]
+        }).then(function(dbEmployer) {
+            let employer = dbEmployer.dataValues;
+            let campArray = [], camp;
+            console.log('employer', employer);
+            let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
+            campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
+                camp = campaign.dataValues;
+                camp.employer = employer.employerName;
+                camp.city = employer.city;
+                camp.state = employer.state;
+                camp.industry = employer.industry;
+                campArray.push(camp);
+                console.log('campArray', campArray);
+            })
+            console.log('{campaigns: campArray}', {campaigns: campArray});
+
+            app.render("found", {campaigns: campArray});
+            });
+    });
+
+//GOOD find employer by employer ID
+    app.get("/employers/:id", function(req, res) {
+        db.Employer.findOne({
+            where: {
+                id: req.params.id
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
             res.json(dbEmployer);
             });
     });
-
-//GOOD find employer by employer ID
-app.get("/employers/:id", function(req, res) {
-    db.Employer.findOne({
-        where: {
-            id: req.params.id
-        },
-        include: [db.Campaign]
-    }).then(function(dbEmployer) {
-        res.json(dbEmployer);
-        });
-});
 
 //GOOD update employer information
     app.put("/employers/", function(req, res) {

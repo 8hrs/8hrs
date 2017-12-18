@@ -1,0 +1,75 @@
+
+<!--Hero image-->
+<div>
+	<img id="found-heroimage" src="images/found-header.png">
+	<h1 id="header-text" class="text-center">WE FOUND<BR>YOUR<BR>EMPLOYER</h1>
+	<span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('middle-section')"></span>
+</div>
+<!--Hero image-->
+
+
+			<div class="container">
+          <div class="row">
+    					<div class="col-lg-5 text-right">
+    						<h1 id="title-text">ABOUT<BR>THIS<BR>CAMPAIGN</h1>
+    					</div>	
+
+       				<div id="eighthr-content" class="col-lg-7" >
+                          	<!--Title for the Employer Goes here-->
+                            {{#each campaigns}}
+                          	<h1 id="employer">{{employer}}</h1>
+
+                          	<!--City, State-->
+                          	<p id="location" class="employer-body"> <em>{{city}}, {{state}}</em></p>
+                          	<!--Industry-->
+                          	<p id="industry" class="employer-body">{{industry}}</p>
+                          	<!--List of concerns-->
+                          	<li id="concern-list" class="employer-body">Wages</li>
+                          	<li id="concern-list" class="employer-body">Racial haEquality</li>
+                          	<li id="concern-list" class="employer-body">Working Conditions</li>
+                          	<li id="concern-list" class="employer-body">Benefits</li>
+                          	<!--Message to colleagues-->
+                          	<p id="messagetocolleagues" class="employer-body">This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh</p>
+                          {{/each}}
+              </div>
+          </div>
+      </div>
+
+
+<!--percentage section-->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12" >
+      <img id="second-image" src="images/middle-back.png">
+      </div>
+    </div>
+</div>
+
+
+
+
+<!--This is where the Glassdoor API info can be dumped-->
+<div class="container" id="middle-section">
+          <div class="row">
+              <div class="col-lg-3"></div>
+              <div id="api-content" class="col-lg-4">
+                            <!--Title for the Employer Goes here-->
+                            <h1 id="api-text-header"> GLASSDOOR INFORMATION </h1>
+                            <!--Message to colleagues-->
+                            <p id="messagetocolleagues" class="employer-body-api">This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh
+                            This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh
+                          This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh
+                        This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfhThis is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfhThis is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh</p>
+              </div>
+            
+              <div class="col-lg-1">
+                <h1 id="api-text">WHAT<BR>OTHERS<BR>ARE<BR>SAYING</h1>
+              </div> 
+          </div>
+      </div>
+
+
+
+<div id="goals">
+  <h1>MEMBER GOALS</h1>
+</div>

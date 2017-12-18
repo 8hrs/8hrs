@@ -6,6 +6,7 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const handlebars = require("express-handlebars");
 const ext_apiRoutes = require("./routes/ext-api-routes.js")
 // Sets up the Express App
@@ -23,7 +24,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Handlebars
-
+app.engine("handlebars", handlebars({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
 
 // Static directory
 app.use(express.static("public"));

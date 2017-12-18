@@ -22,8 +22,10 @@ module.exports = function(app) {
     });
     
 
-//GOOD find employer by employer name
-    app.get("/employers/:employerName", function(req, res) {
+//This big ugly function searches for existing campaigns and then grabs some
+//data from glassdoor if one is found, and then renders found.handlebars with
+//campaign and glassdoor data. If not found, redirects to newcampaign.html
+    app.get("/findCampaign/:employerName", function(req, res) {
         var campArray = [], resultsArray = [], camp;
         db.Employer.findOne({
             where: {
@@ -43,15 +45,11 @@ module.exports = function(app) {
                     camp.state = employer.state || "";
                     camp.industry = employer.industry;
                     campArray.push(camp);
-
-                    // console.log('campArray', campArray);
                 });
             }
             catch(error){
                 console.log("no matching campaign was found");
-                // return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
             }
-
             }).then(function (){
                 try{
                     console.log("EMPLOYER=",camp.employer);
@@ -70,7 +68,6 @@ module.exports = function(app) {
                 catch(error){
                     return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
                 }
-
             });
     });
 

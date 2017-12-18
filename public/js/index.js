@@ -97,8 +97,8 @@ function searchEmployers (searchObj, callback){
 }
 
 function searchGlassdoor (searchObj, callback){
-	$.post("ext_api/employer-search", JSON.stringify(searchObj)).done(function (data){
-		console.log("sending post request");
+	$.get("ext_api/employer-search", JSON.stringify(searchObj)).done(function (data){
+		console.log("sending get request");
 		console.log("* data = ", data);
 		return callback(data);
 	});

@@ -1,15 +1,10 @@
 // Requiring our models
 var db = require("../models");
-const bodyParser = require("body-parser");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.text());
-    app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //GOOD create a new campaign
     app.post("/campaigns", function(req, res) {
         db.Campaign.create(req.body)
@@ -22,14 +17,10 @@ module.exports = function(app) {
     app.get("/campaigns", function(req, res) {
         db.Campaign.findAll({
     }).then(function(dbCampaign) {
-        console.log("****res**** -", res.body);
-        res.render("found", res[0].Campaigns[0]);
         res.json(dbCampaign);
         });
     }); 
-//     app.get("/weekday", function(req, res) {
-//   res.render("index", lunches[0]);
-// });
+
 
 
 //GOOD get campaign by id

@@ -17,9 +17,10 @@ $("#searchSubmit").on("click", function (){
 		city: city,
 		state: state
 	}
-	searchCampaigns (searchObj, function(result){
-		console.log(result);
-	});
+	$("#exampleModal").modal("toggle");
+	searchCampaigns (searchObj);//, function(result){
+		// console.log(result);
+	//});
 	// searchGlassdoor(searchObj, function(result){
 	// 	console.log("result", result);
 	// });
@@ -27,12 +28,14 @@ $("#searchSubmit").on("click", function (){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj, callback){
-	$.get("/campaigns", JSON.stringify(searchObj)).done(function (data){
+	$.get(`/employers/${searchObj.employer}`, JSON.stringify(searchObj)).done(function (data){
 		console.log("sending get request");
 		console.log("* data = ", data);
-		// return callback()
-		const existingCampaigns = data[0].Campaigns;
-		return callback(existingCampaigns);
+		const existingCampaigns = data;//data[0].Campaigns;
+		console.log('typeof existingCampaigns', typeof existingCampaigns)
+		if(callback){
+			return callback(existingCampaigns);
+		}
 	});
 }
 

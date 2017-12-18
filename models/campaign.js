@@ -51,9 +51,8 @@ module.exports = function (sequelize, DataTypes) {
 
         // Associating Employer with Campaign
         // When an Employer is deleted, also delete any associated Campaigns
-        Campaign.hasMany(models.User, { 
-            onDelete: "cascade"
-       })
+        Campaign.hasMany(models.User, {});
+        Campaign.belongsTo(models.Employer,{});
     }
 	return Campaign;
 };

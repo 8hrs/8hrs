@@ -1,17 +1,111 @@
+  <!--HAMBURGER SIDEBAR-->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="resources.html">
+          <li>Resources</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <!--HAMBURGER SIDEBAR END-->
 
-	<h1 id="employer"> 
-  {{#each campaigns}}
-    {{employer}}</h1>
 
-	<!--City, State-->
-	<p id="location" class="employer-body"> <em>{{city}}, {{state}}</em></p>
-	<!--Industry-->
-	<p id="industry" class="employer-body">{{industry}}</p>
-	<!--List of concerns-->
-	<li id="concern-list" class="employer-body">Wages</li>
-	<li id="concern-list" class="employer-body">Racial haEquality</li>
-	<li id="concern-list" class="employer-body">Working Conditions</li>
-	<li id="concern-list" class="employer-body">Benefits</li>
-	<!--Message to colleagues-->
-	<p id="messagetocolleagues" class="employer-body">This is some corens I have about working for Chicago Chater schools. Blah blah ablah sufhds afyhsdfu sdfhusf asf dfuy sadhbf uyfa sdbsdfyghjshadf iushda fsdfh sdiu asdfb dsfg safb aljfh aisdyfg jahsfb jhdsgaf ias dfbsadhfg adfyg badfb jajsfh</p>
-{{/each}}
+  <!--HERO IMAGE-->
+  <div id="hero-image" class="jumbotron text-center">
+    <img src="images/8hrs-logo.png">
+    <p id="biline-one">
+      <em>“The ability of employees to join a labor union is the single largest unclaimed
+        <br>legal right to additional personal wealth in America today.”</em>
+    </p>
+    <button id="header-button-scroll" type="button" class="btn btn-secondary">Learn More</button>
+  </div>
+  <!--HERO IMAGE END-->
+
+  <!--ABOUT THIS APP INFO-->
+  <div id="middle-section" class="container">
+    <div class="row">
+      <!--SIDE PICTURE OF UNION-->
+      <div class="col-sm-6">
+        <img id="side-pic" src="images/side-pic.png">
+      </div>
+      <!--DESCRIPTION OF APP-->
+      <div id="description" class="col-sm-5">
+        <h1 id="union-header">Why Unionize?</h1>
+        <hr>
+        <p>Americans want more influence in the workplace to win better wages, better benefits, and more flexible work schedules—all
+          of which can be gained through joining a union.</p>
+
+        <p>
+          <span style="color:#abdc3b">8hrs</span> allow individuals to anonymously sign up to a labor organization and survey their concerns.</p>
+
+        <!-- BUTTON TRIGGERING MODAL -->
+        <button id="header-button-modal" type="button" class="btn btn-default">Let's Get Started</button>
+      </div>
+    </div>
+  </div>
+  <!--ABOUT THIS APP INFO-->
+
+  <!--SECURITY INFO ABOUT APP-->
+  <div id="section-three" class="jumbotron text-center">
+    <img src="images/security-icon-07.png" width="150px" height="auto">
+    <p id="biline-two">
+      <em>Organzing digitally reduces the concerns of individuals feeling they would be who
+        <br>would be spied on, harassed, pressured, threatened, suspended, fired, deported or otherwise victimized
+        <br> if they publically attempted to sign up for a union. </em>
+    </p>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Let's check to see if a campaign to organize has
+            <br>been entered for your employer...</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="employer-name" class="col-form-label">Employer:</label>
+                <input type="text" class="form-control" id="employer-name">
+              </div>
+              <div class="form-group">
+                <label for="city" class="col-form-label">City:</label>
+                <input type="text" class="form-control" id="city"></input>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" id="state-dropdown" type="button" data-toggle="dropdown">State
+                  <span class="caret"></span>
+                </button>
+                <ul id="states" class="dropdown-menu" role="menu" size="8" aria-labelledby="states">
+                </ul>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="searchSubmit" class="btn btn-default">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--js for animation of first button click to section 2-->
+
+  <script src="js/statesArray.js"></script>
+  <script src="js/search.js"></script>

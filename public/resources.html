@@ -26,69 +26,80 @@
     <script src="https://surveyjs.azureedge.net/0.98.1/survey.jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111282891-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111282891-1');
+    </script>
+
 </head>
 
 <body id="found-body">
 
-<!--HAMBURGER SIDEBAR-->
-  <nav role="navigation">
-    <div id="menuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <a href="index.html">
-          <li>Home</li>
-        </a>
-        <a href="resources.html">
-          <li>Resources</li>
-        </a>
-      </ul>
+    <!--HAMBURGER SIDEBAR-->
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="resources.html">
+                    <li>Resources</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <!--HAMBURGER SIDEBAR END-->
+
+
+    <!--Top Black bar with logo-->
+    <div class="jumbotron text-center black-header">
+        <img class="small-logo" src="images/8hrs-layout-little-08.png">
     </div>
-  </nav>
-  <!--HAMBURGER SIDEBAR END-->
+    <!--Navagation Bar End-->
 
 
-  <!--Top Black bar with logo-->
-  <div class="jumbotron text-center black-header">
-    <img class="small-logo" src="images/8hrs-layout-little-08.png">
-  </div>
-  <!--Navagation Bar End-->
-
-
-  <!--Hero image-->
-  <div>
-    <img id="resources-heroimage" src="images/resource-header.png">
-    <!--     <img id="lets-start" src="images/new-campaign-logo-09.png">
+    <!--Hero image-->
+    <div>
+        <img id="resources-heroimage" src="images/resource-header.png">
+        <!--     <img id="lets-start" src="images/new-campaign-logo-09.png">
  -->
-    <h1 id="resources-headertext" class="text-center">RESOURCES</h1>
-    <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
-  </div>
-  <!--Hero image-->
+        <h1 id="resources-headertext" class="text-center">RESOURCES</h1>
+        <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+    </div>
+    <!--Hero image-->
 
 
 
     <!-- Page Content -->
 
-  <div id="resourse-links" class="row">
-    <div class="col-lg-8 col-lg-offset-2">
+    <div id="resourse-links" class="row">
+        <div class="col-lg-8 col-lg-offset-2">
 
-      <div class="list-group">
-          <a href="http://www.unionist.com/big-labor/every-union-website" class="list-group-item">
-              Unionist - Every Union Web Site
-          </a>
-          <a href="https://en.wikipedia.org/wiki/Labor_unions_in_the_United_States" class="list-group-item list-group-item-action">Wikipedia - Labor unions in the United States</a>
-          <a href="http://www.thelaborsite.com/uniondirectory1.cfm" class="list-group-item list-group-item-action">The Laborsite.com - List of union websites/e-mails</a>
-          <a href="https://www.dol.gov/general/audience/aud-labor" class="list-group-item list-group-item-action">United States Department of Labor - Find It! By Audience : Labor Unions</a>
-          <a href="https://www.nlrb.gov/" class="list-group-item list-group-item-action">National Labor Relations Board</a>
-          <a href="https://www.dol.gov/whd/contacts/state_of.htm#IL" class="list-group-item list-group-item-action">United States Depatment of Labor - State Labor Offices</a>
-          <a href="https://www.dol.gov/whd/minwage/america.htm" class="list-group-item list-group-item-action">United States Depatment of Labor - Minimum Wage Laws</a>
-          <a href="https://www.bls.gov/news.release/union2.toc.htm" class="list-group-item list-group-item-action">Union Membership summary and data</a>
-          <a href="https://www.dol.gov/olms/union_info.htm" class="list-group-item list-group-item-action">United States Department of Labor - Office of Labor-Management Standards</a>
-      </div>
-  </div>
-</div>
+            <div class="list-group">
+                <a href="http://www.unionist.com/big-labor/every-union-website" class="list-group-item">
+                    Unionist - Every Union Web Site
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Labor_unions_in_the_United_States" class="list-group-item list-group-item-action">Wikipedia - Labor unions in the United States</a>
+                <a href="http://www.thelaborsite.com/uniondirectory1.cfm" class="list-group-item list-group-item-action">The Laborsite.com - List of union websites/e-mails</a>
+                <a href="https://www.dol.gov/general/audience/aud-labor" class="list-group-item list-group-item-action">United States Department of Labor - Find It! By Audience : Labor Unions</a>
+                <a href="https://www.nlrb.gov/" class="list-group-item list-group-item-action">National Labor Relations Board</a>
+                <a href="https://www.dol.gov/whd/contacts/state_of.htm#IL" class="list-group-item list-group-item-action">United States Depatment of Labor - State Labor Offices</a>
+                <a href="https://www.dol.gov/whd/minwage/america.htm" class="list-group-item list-group-item-action">United States Depatment of Labor - Minimum Wage Laws</a>
+                <a href="https://www.bls.gov/news.release/union2.toc.htm" class="list-group-item list-group-item-action">Union Membership summary and data</a>
+                <a href="https://www.dol.gov/olms/union_info.htm" class="list-group-item list-group-item-action">United States Department of Labor - Office of Labor-Management Standards</a>
+            </div>
+        </div>
+    </div>
     <!-- Page Content END -->
 
     <!-- JS for hamburger -->

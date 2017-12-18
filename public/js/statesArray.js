@@ -53,4 +53,5 @@ const statesArray = ["AK - Alaska",
                 "WI - Wisconsin", 
                 "WV - West Virginia", 
                 "WY - Wyoming"
+
 ];

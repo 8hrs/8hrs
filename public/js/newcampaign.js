@@ -19,7 +19,6 @@ $(document).ready(function() {
 
     $("#submit-button").on("click", function (){
         event.preventDefault();
-        alert("yay")
        
         var employerData = {
                 employerName: employernameInput.val().trim(),
@@ -51,7 +50,7 @@ $(document).ready(function() {
   
     })
 
-//this function is for create employer but the PUT part is nut yet working
+//this function is for create employer but the PUT part is not yet working
     function upsertEmployer(employerData) {
       $.post("/employers", employerData)
         .then(function(data) {
@@ -74,5 +73,5 @@ $(document).ready(function() {
         alert("The form has been submitted")
     }
 
-  });
+});//document.ready
   

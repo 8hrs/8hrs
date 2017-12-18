@@ -2,7 +2,6 @@
 	<img src="public/images/header-for-readme.png"><br>
 </div>
 
------------------
 ## Description
 **8hrs** is web application designed and developed by [Team Haymarket](https://github.com/8hrs) to help workers communicate and organize.  
 

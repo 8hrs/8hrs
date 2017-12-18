@@ -1,4 +1,4 @@
-console.log("index.js loaded");
+console.log("search.js loaded");
 
 //On page load, populates dropdown of states' names
 //statesArray is in a separate file: statesArray.js
@@ -8,7 +8,8 @@ $(document).ready(function(){
 
 //Assigns user search input to variables and passes them as key/value
 //pairs in an object to the searchCampaigns function 
-$("#searchSubmit").on("click", function (){
+$("#searchSubmit").on("click", function (event){
+	event.preventDefault();
 	let employer = $("#employer-name").val();
 	let city  = $("#city").val();
 	let state = $("#state-dropdown").text().slice(5);
@@ -17,8 +18,12 @@ $("#searchSubmit").on("click", function (){
 		city: city,
 		state: state
 	}
-	$("#exampleModal").modal("toggle");
-	searchCampaigns (searchObj);//, function(result){
+	$("#exampleModal").toggle();
+	searchCampaigns (searchObj, openFoundView);
+
+
+
+	//, function(result){
 		// console.log(result);
 	//});
 	// searchGlassdoor(searchObj, function(result){
@@ -28,7 +33,7 @@ $("#searchSubmit").on("click", function (){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj, callback){
-	$.get(`/employers/${searchObj.employer}`, JSON.stringify(searchObj)).done(function (data){
+	$.get(`/employers/${searchObj.employer}`).done(function (data){
 		console.log("sending get request");
 		console.log("* data = ", data);
 		const existingCampaigns = data;//data[0].Campaigns;
@@ -37,6 +42,12 @@ function searchCampaigns (searchObj, callback){
 			return callback(existingCampaigns);
 		}
 	});
+}
+
+//Show found.handlebars
+function openFoundView (data){
+    console.log('~ data', data);
+    $("body").html(data);
 }
 
 //Performs an employer search through Glassdoor's api
@@ -66,4 +77,19 @@ $(document).on("click", ".stateOption", function (event){
 	console.log(this.text + " !");
 });
 
+$("#header-button-scroll").on("click", function(){
+	scrollToDiv("middle-section");
+});
+
+function scrollToDiv(div_id) {
+  $("html,body").animate({
+    scrollTop: $("#" + div_id).offset().top
+  },"slow");
+  console.log("this is the scroll click...")
+}
+
+$("#header-button-modal").on("click", function(){
+	console.log("click");
+	$("#exampleModal").toggle();
+})
 

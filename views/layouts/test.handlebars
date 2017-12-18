@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="utf-8">
+  <title>8hrs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <!-- Your platform (jquery) scripts. -->
+  <script src="https://surveyjs.azureedge.net/0.98.1/survey.jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111282891-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111282891-1');
+  </script>
+
 </head>
+
 <body>
 	{{{body}}}
+  <!--js for animation of first button click to section 2-->
+  <script type="text/javascript">
+    function scroll_to_div(div_id) {
+      $('html,body').animate({
+        scrollTop: $("#" + div_id).offset().top
+      },
+        'slow');
+      console.log("this is the scroll click")
+    }
+  </script>
+
+  <script src="js/statesArray.js"></script>
+  <script src="js/search.js"></script>
+
+
 </body>
+
 </html>

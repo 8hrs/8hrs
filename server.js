@@ -21,7 +21,7 @@ const db = require("./models");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Handlebars
 app.engine("handlebars", handlebars({defaultLayout: "main"}));
@@ -37,7 +37,7 @@ require("./controllers/campaign-api-routes.js")(app);
 require("./controllers/user-api-routes.js")(app);
 require("./controllers/employer-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-
+console.log("app info:", app.__router);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {

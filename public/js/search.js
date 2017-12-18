@@ -33,7 +33,7 @@ $("#searchSubmit").on("click", function (event){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj, callback){
-	$.get(`/employers/${searchObj.employer}`).done(function (data){
+	$.get(`/findCampaign/${searchObj.employer}`).done(function (data){
 		console.log("sending get request");
 		console.log("* data = ", data);
 		const existingCampaigns = data;//data[0].Campaigns;
@@ -45,9 +45,10 @@ function searchCampaigns (searchObj, callback){
 }
 
 //Show found.handlebars
-function openFoundView (data){
+function openFoundView (data, searchObj){
     console.log('~ data', data);
     $("body").html(data);
+    // searchGlassdoor();
 }
 
 //Performs an employer search through Glassdoor's api

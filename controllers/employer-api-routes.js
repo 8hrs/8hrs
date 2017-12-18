@@ -28,6 +28,7 @@ module.exports = function(app) {
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
+            console.log('dbEmployer', dbEmployer);
             let employer = dbEmployer.dataValues;
             let campArray = [], camp;
             console.log('employer', employer);
@@ -43,7 +44,7 @@ module.exports = function(app) {
             })
             console.log('{campaigns: campArray}', {campaigns: campArray});
 
-            app.render("found", {campaigns: campArray});
+            res.render("found", {campaigns: campArray});
             });
     });
 

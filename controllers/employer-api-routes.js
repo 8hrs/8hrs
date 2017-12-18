@@ -1,6 +1,6 @@
 const db = require("../models");
 const gd = require("../ext_api/glassdoor.js");
-
+const path = require("path");
 console.log("employer-api-routes.js loaded.");
 module.exports = function(app) {
 
@@ -31,46 +31,45 @@ module.exports = function(app) {
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
-            let employer = dbEmployer.dataValues;
-            
-            // console.log('employer', employer);
-            let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
-            campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
-                camp = campaign.dataValues;
-                camp.employer = employer.employerName || "";
-                camp.city = employer.city || "";
-                camp.state = employer.state || "";
-                camp.industry = employer.industry;
-                campArray.push(camp);
-                // console.log('campArray', campArray);
-            });
-            // res.render("found", {campaigns: campArray})
-            }).then(function (){
-                console.log("EMPLOYER=",camp.employer);
-                gd.employerQuery(camp.city, camp.state, camp.employer, function (data){
-                    console.log('\n\n\n\ndata\n\n\n\n', data)
-                    // data.employers.forEach(function (employer){
-                    let emp = data.employers[0];
-                    if(emp.exactMatch){
-                        for (key in emp){
-                            camp[key] = emp[key];
-                        }
-                        // camp.website = employer.website;
-                        // camp.sectorName = employer.sectorName;
-                        // camp.industryName = employer.industryName;
-                        // camp.featuredReview = employer.featuredReview;
-                        // camp.overallRating = employer.overallRating;
-                        // camp.cultureAndValuesRating = employer.cultureAndValuesRating;
-                        // camp.
-                        // resultsArray.push(employer);
-                    }
-                    // });
-                // camp.gd = resultsArray[0];
-                console.log('camp', camp);
-
-                res.render("found", {campaigns: campArray});
-                });
+            try{
+                let employer = dbEmployer.dataValues;
                 
+                // console.log('employer', employer);
+                let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
+                campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
+                    camp = campaign.dataValues;
+                    camp.employer = employer.employerName || "";
+                    camp.city = employer.city || "";
+                    camp.state = employer.state || "";
+                    camp.industry = employer.industry;
+                    campArray.push(camp);
+
+                    // console.log('campArray', campArray);
+                });
+            }
+            catch(error){
+                console.log("no matching campaign was found");
+                // return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+            }
+
+            }).then(function (){
+                try{
+                    console.log("EMPLOYER=",camp.employer);
+                    gd.employerQuery(camp.city, camp.state, camp.employer, function (data){
+                        // data.employers.forEach(function (employer){
+                        let emp = data.employers[0];
+                        if(emp.exactMatch){
+                            for (key in emp){
+                                camp[key] = emp[key];
+                            }
+                        }
+                    console.log('camp', camp);
+                    res.render("found", {campaigns: campArray});
+                    });
+                }
+                catch(error){
+                    return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+                }
 
             });
     });

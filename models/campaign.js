@@ -34,7 +34,8 @@ module.exports = function (sequelize, DataTypes) {
 			defaultValue: false,
         },
         others: {
-            type: DataTypes.TEXT,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         },
         targetSignup: {
             type: DataTypes.INTEGER,

@@ -64,7 +64,8 @@ module.exports = function(app) {
                     });
                 }
                 catch(error){
-                    return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+                    console.log("trying redirect instead of sendFile");
+                    return res.redirect("/newcampaign.html");////res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
                 }
             });
     });

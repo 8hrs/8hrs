@@ -16,6 +16,8 @@ $(document).ready(function() {
     var otherInput = $("#other_id");
     var commentInput = $("#comment_id");
     var goalInput = $("#goal_id");
+    var usernameInput = $("#user_name_id");
+    var emailInput = $("#email_id");
 
     $("#submit-button").on("click", function (){
         event.preventDefault();
@@ -37,6 +39,11 @@ $(document).ready(function() {
                 others: otherInput.val().trim(),
                 message: commentInput.val().trim(),
                 targetSignup: goalInput.val().trim()
+        }
+
+        var userData = {
+                userName: usernameInput.val().trim(),
+                email: emailInput.val().trim()
         }
       
       // Don't do anything if the name fields hasn't been filled out
@@ -75,9 +82,14 @@ $(document).ready(function() {
     function upsertCampaign(campaignData) {
         $.post("/campaigns", campaignData)
     }
-    function getEmployers () {
+    function upsertUser(userData) {
+        $.post("/users", userData)
+        .then(formSubmitted)
+    }
+    function formSubmitted () {
         alert("The form has been submitted")
     }
+
 
 });//document.ready
   

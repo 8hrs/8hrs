@@ -65,7 +65,8 @@ module.exports = function(app) {
                 }
                 catch(error){
                     console.log("trying redirect instead of sendFile");
-                    return res.redirect("/newcampaign.html");////res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+                    res.redirect("/newcampaign.html");////res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+                    return false;
                 }
             });
     });

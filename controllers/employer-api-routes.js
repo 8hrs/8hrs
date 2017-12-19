@@ -35,10 +35,8 @@ module.exports = function(app) {
         }).then(function(dbEmployer) {
             try{
                 let employer = dbEmployer.dataValues;
-                
-                // console.log('employer', employer);
-                let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
-                campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
+                let annoyingDataStructure = employer.Campaigns;
+                annoyingDataStructure.forEach(function(campaign){
                     camp = campaign.dataValues;
                     camp.employer = employer.employerName || "";
                     camp.city = employer.city || "";

@@ -262,7 +262,7 @@ h3{
 #last-section{
   width: 100%;
   background-color: #232323;
-  height: 500px
+  height: 600px
 }
 
 #target-bar-section{
@@ -296,6 +296,17 @@ h3{
   border: solid;
   border-color: #abdc3b;
   color: white
+}
+#join-user-id{
+     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+     color:#abdc3b;
+font-size: 18px
+}
+
+#join-email-id{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+     color:#abdc3b;
+font-size: 18px
 }
 
 #target-status{

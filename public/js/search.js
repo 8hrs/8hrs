@@ -10,8 +10,8 @@ $(document).ready(function(){
 //pairs in an object to the searchCampaigns function 
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
-	let employer = $("#employer-name").val();
-	let city  = $("#city").val();
+	let employer = $("#employer-name").val().trim();
+	let city  = $("#city").val().trim();
 	let state = $("#state-dropdown").text().slice(5);
 	let searchObj = {
 		employer: employer,
@@ -20,15 +20,6 @@ $("#searchSubmit").on("click", function (event){
 	}
 	$("#exampleModal").toggle();
 	searchCampaigns (searchObj, openFoundView);
-
-
-
-	//, function(result){
-		// console.log(result);
-	//});
-	// searchGlassdoor(searchObj, function(result){
-	// 	console.log("result", result);
-	// });
 });
 
 //Searches the database for existing campaigns associated with an employer

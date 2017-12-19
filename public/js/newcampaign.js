@@ -47,9 +47,15 @@ $(document).ready(function() {
         upsertCampaign(campaignData)
         console.log(employerData)
         console.log(campaignData)
+        showNewCampaign(employerData.employerName);
   
-    })
+    });
 
+    function showNewCampaign(employerName){
+        $.get(`/findCampaign/${employerName}`).done(function (data){
+            $("body").html(data);
+        });
+    }
 //this function is for create employer but the PUT part is not yet working
     function upsertEmployer(employerData) {
       $.post("/employers", employerData)

@@ -24,7 +24,7 @@ app.use(bodyParser.text());
 // app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Handlebars
-app.engine("handlebars", handlebars({defaultLayout: "main"}));
+app.engine("handlebars", handlebars({layout: false}));
 app.set("view engine", "handlebars");
 
 // Static directory

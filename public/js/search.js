@@ -19,28 +19,34 @@ $("#searchSubmit").on("click", function (event){
 		state: state
 	}
 	$("#exampleModal").toggle();
-	searchCampaigns (searchObj, openFoundView);
+	searchCampaigns (searchObj);
 });
 
 //Searches the database for existing campaigns associated with an employer
-function searchCampaigns (searchObj, callback){
-	$.get(`/findCampaign/${searchObj.employer}`).done(function (data){
-		console.log("sending get request");
-		console.log("* data = ", data);
-		const existingCampaigns = data;//data[0].Campaigns;
-		console.log('typeof existingCampaigns', typeof existingCampaigns)
-		if(callback){
-			return callback(existingCampaigns);
-		}
+function searchCampaigns (searchObj){
+	$.get(`/findCampaign/${searchObj.employer}`).then(function (data){
+		//console.log('data', data);
+		let start = data.indexOf("<head>");
+		console.log('start', start)
+		let end = data.indexOf("</head>") + 7;
+		console.log('end', end)
+		let head = data.slice(start, end);
+		let body = data.slice(end);
+		console.log('body', body);
+		console.log('head', head);
+		$("head").html(head);
+		$("body").html(body);
+
 	});
 }
 
-//Show found.handlebars
-function openFoundView (data, searchObj){
-    console.log('~ data', data);
-    $("body").html(data);
-    // searchGlassdoor();
-}
+// //Show found.handlebars
+// function openFoundView (data){
+//     if (render){
+//     	$("body").html(data);
+// 	}
+// 	return;
+// }
 
 //Performs an employer search through Glassdoor's api
 function searchGlassdoor (searchObj, callback){

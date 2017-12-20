@@ -26,17 +26,25 @@ $("#searchSubmit").on("click", function (event){
 function searchCampaigns (searchObj){
 	$.get(`/findCampaign/${searchObj.employer}`).then(function (data){
 		//console.log('data', data);
-		let start = data.indexOf("<head>");
-		console.log('start', start)
-		let end = data.indexOf("</head>") + 7;
-		console.log('end', end)
-		let head = data.slice(start, end);
-		let body = data.slice(end);
-		console.log('body', body);
-		console.log('head', head);
-		$("head").html(head);
-		$("body").html(body);
+		let startOfHeadTag = data.indexOf("<head");
+		console.log('startOfHeadTag', startOfHeadTag);
+		let endOfHeadTag = startOfHeadTag + data.slice(startOfHeadTag).indexOf(">") + 1;
+		console.log('endOfHeadTag', endOfHeadTag);
+		let endOfHead = data.indexOf("</head");
+		console.log('endOfHead', endOfHead);
+		let head = data.slice(endOfHeadTag, endOfHead);
 
+		let startOfBodyTag = data.indexOf("<body");
+		let endOfBodyTag = startOfBodyTag + data.slice(startOfBodyTag).indexOf(">") + 1;
+		let endOfBody = data.indexOf("</body");
+		let body = data.slice(endOfBodyTag, endOfBody);
+		// console.log('end', end)
+		console.log("B-B-BBODY", body);
+		console.log("HEAD =", head);
+		$(document.head).empty();
+		$(document.body).empty();
+		$(document.head).html(head);
+		$(document.body).html(body);
 	});
 }
 

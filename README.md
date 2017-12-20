@@ -5,19 +5,6 @@
 ## Description
 **8hrs** is web application designed and developed by [Team Haymarket](https://github.com/8hrs) to help workers communicate and organize.  
 
-## How to access the app
-The app can be accessed [here](https://eight-hrs.herokuapp.com/).
-
-Once the app has loaded the employee will:
-1. View the site and will learn more about why they should unionize and
-click on the button 'Let's Get Started' to perform a search for his Employer.  
-<div align="left">
-	<img src="public/images/Search-for-Employer.png">
-</div>
-2. If the Employer is found, then the employee can view an existing campaign and join the campaign [foundpage.html](https://eight-hrs.herokuapp.com/foundpage.html)
-3. If an employer is not found, then the employee is brought to a page to create a new campaign [newcampaign.html](https://eight-hrs.herokuapp.com/newcampaign.html)
-4. At any time - the employee can click on the hamburger icon to go to ['Home'](https://eight-hrs.herokuapp.com/) or the ['Resources'](https://eight-hrs.herokuapp.com/resources.html) page
-
 ## Motivation for Development
 Americans want more influence in the workplace to win better wages, better benefits, and more flexible work schedules—all of which can be gained through joining a union.
 
@@ -32,6 +19,19 @@ Our app will allow individuals at an organization communicate and to start to or
 
 ## Design Process
 We wanted to create a simple yet appealing interface that would allow individuals to quickly see information based on current campaigns and to create one if one did not exist.   
+
+## How to access the app
+The app can be accessed [here](https://eight-hrs.herokuapp.com/).
+
+Once the app has loaded the employee will:
+* View the site and will learn more about why they should unionize and
+click on the button 'Let's Get Started' to perform a search for his Employer.  
+<div align="left">
+	<img src="public/images/Search-For-Employer.png">
+</div>
+* If the Employer is found, then the employee can view an existing campaign and join the campaign [foundpage.html](https://eight-hrs.herokuapp.com/foundpage.html)
+* If an employer is not found, then the employee is brought to a page to create a new campaign [newcampaign.html](https://eight-hrs.herokuapp.com/newcampaign.html)
+* At any time - the employee can click on the hamburger icon to go to ['Home'](https://eight-hrs.herokuapp.com/) or the ['Resources'](https://eight-hrs.herokuapp.com/resources.html) page
 
 ## Technology
 

@@ -25,12 +25,16 @@ The app can be accessed [here](https://eight-hrs.herokuapp.com/).
 
 Once the app has loaded the employee will:
 * View the site and will learn more about why they should unionize and
-click on the button 'Let's Get Started' to perform a search for his Employer.  
+click on the button 'Let's Get Started' to perform a search for his Employer.
+
 <div align="left">
 	<img src="public/images/Search-For-Employer.png">
 </div>
+
 * If the Employer is found, then the employee can view an existing campaign and join the campaign [foundpage.html](https://eight-hrs.herokuapp.com/foundpage.html)
+
 * If an employer is not found, then the employee is brought to a page to create a new campaign [newcampaign.html](https://eight-hrs.herokuapp.com/newcampaign.html)
+
 * At any time - the employee can click on the hamburger icon to go to ['Home'](https://eight-hrs.herokuapp.com/) or the ['Resources'](https://eight-hrs.herokuapp.com/resources.html) page
 
 ## Technology

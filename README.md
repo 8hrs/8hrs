@@ -82,6 +82,7 @@ Audience Overview
 Users Flow
 	<img src="public/images/GA-userflows.png"><br>
 </div>
+
 ## What's Included
 Within the download archive you'll find the following directories and files, logically grouping common assets and utilizes the MVC Framework and Application Structure. You'll see something like this:
 
@@ -128,6 +129,7 @@ Within the download archive you'll find the following directories and files, log
 ├── README.md
 ├── server.js
 ```
+
 ## Future development
 * Add user account and logins
 * Introduction of an Admin/Campaign Organizer

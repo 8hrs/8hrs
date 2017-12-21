@@ -8,10 +8,7 @@ h1{
     font-size: 18px;
     margin-bottom: 2px;
     margin-top: 20px;
-
-
 }
-
 
 a.list-group-item, button.list-group-item{
   color: #279989;
@@ -63,7 +60,6 @@ nav{
   width: 100%;
   top: 1750px;
   height: 300px;
-
 }
 
 #biline-one{
@@ -80,8 +76,6 @@ nav{
     align-content: center;
     width: 300px;
     height: auto;
-
-
 }
 
 #lets-start{
@@ -98,16 +92,16 @@ nav{
     transform: translate(-50%, -50%);
     color: white
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 720px) {
     #header-text {
     font-size: 40px
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 440px) {
     #header-text {
-    font-size: 15px
-    }
+    font-size: 12px
+   }
 }
 
 #arrow-down{
@@ -139,7 +133,6 @@ background-color: black;
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
-  
 }
 
 
@@ -149,8 +142,8 @@ background-color: black;
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-  
 }
+
 /*------------------------FOUND PAGE SECTION 2------------------*/
 #api-heroimage{
     width: 100%;
@@ -170,17 +163,14 @@ background-color: black;
 */
 }
 
-
 #api-text{
   font-size: 50px;
   margin-left: 0px;
   padding-left: 0px;
   line-height: 45px;
   color: white;
-padding-top: 450px;
-
+  padding-top: 450px;
 }
-
 
 #api-text-header{
   font-size: 20px;
@@ -279,8 +269,6 @@ h3{
   letter-spacing: 1px
 }
 
-
-
 #join-header{
    font-size: 70px;
   color: #abdc3b;
@@ -317,6 +305,7 @@ font-size: 18px
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
  letter-spacing: 1PX
 }
+
 /*------------------------BAR GRAPH------------------*/
 #myProgress {
   width: 100%;
@@ -329,11 +318,9 @@ font-size: 18px
   background-color: #01b9ae;
 }
 
-
 /*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
 #middle-section{
   width: 100%;
-
 }
 
 #second-image{
@@ -342,12 +329,11 @@ font-size: 18px
   margin-left: 0px;
   position: absolute;
   top: -60px;
-
 }
 
 .container{
-  margin: 0px;
-  padding: 0px;
+  margin: 10px;
+  padding: 10px;
   z-index: 2
 }
 
@@ -375,7 +361,6 @@ font-size: 18px
 .small-logo{
     width: 150px;
     height: auto;
-
 }
 
 #title-text{
@@ -385,17 +370,14 @@ font-size: 18px
   line-height: 60px
 }
 
-
 /*#title-text-api{
 font-size: 50px;
   margin-left: 0px;
   padding-left: 0px;
   line-height: 45px;
- position: absolute;
+  position: absolute;
     top: 80%;
     left: 50%;
-
-
 }*/
 
 #sidebar-info{
@@ -408,10 +390,7 @@ font-size: 50px;
     padding-top: 10px;
     margin-left:30px;
     color: white
-
 }
-
-
 
 #side-pic{
 	width: 100%;
@@ -419,8 +398,6 @@ font-size: 50px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
-
-
 }
 
 #description{
@@ -433,7 +410,6 @@ font-size: 50px;
     background-color: #abdc3b,
     border-color: #abdc3b;
 }
-
 
 .btn-green {
     background-color: #abdc3b;
@@ -469,12 +445,10 @@ font-size: 50px;
 hr{
     color: black;
     width: 30%;
-
 }
 
 p{
     font-size: 15px
-
 }
 
 #circle {
@@ -486,7 +460,6 @@ p{
     border-radius: 150px;
 }
 
-
 #found-body {
   margin: 0;
   padding: 0;
@@ -495,11 +468,9 @@ p{
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-a
 {
   text-decoration: none;
   color: #232323;
-  
   transition: color 0.3s ease;
 }
 
@@ -514,9 +485,7 @@ a:hover
   position: relative;
   top: 50px;
   left: 50px;
-  
   z-index: 1;
-  
   -webkit-user-select: none;
   user-select: none;
 }
@@ -529,12 +498,9 @@ a:hover
   position: absolute;
   top: -7px;
   left: -5px;
-  
   cursor: pointer;
-  
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
-  
   -webkit-touch-callout: none;
 }
 
@@ -548,14 +514,10 @@ a:hover
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  
   background: #abdc3b;
   border-radius: 3px;
-  
   z-index: 1;
-  
   transform-origin: 4px 0px;
-  
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;

@@ -1,13 +1,13 @@
 body{
-    margin: 0px
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0px
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 h1{
-    color: #abdc3b;
-    font-size: 18px;
-    margin-bottom: 2px;
-    margin-top: 20px;
+  color: #abdc3b;
+  font-size: 18px;
+  margin-bottom: 2px;
+  margin-top: 20px;
 }
 
 a.list-group-item, button.list-group-item{
@@ -21,9 +21,9 @@ a.list-group-item, button.list-group-item{
 }
 
 #found-heroimage{
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 nav{
@@ -31,28 +31,27 @@ nav{
 }
 
 #campain-name{
-    color: #00B9AE;
-    font-size: 30px;
-    margin-bottom: 8px
-
+  color: #00B9AE;
+  font-size: 30px;
+  margin-bottom: 8px
 }
 
 #union-header{
-    font-size: 50px;
-    color: black
+  font-size: 50px;
+  color: black
 }
 
 .empolyer-body{
-    color: #5d5d81
+  color: #5d5d81
 }
 .empolyer-body-api{
-    color: black;
-    font-size: 14px;
-    line-height: 22px
+  color: black;
+  font-size: 14px;
+  line-height: 22px
 }
 
 #api-text-header{
- color: black
+  color: black
 }
 
 #goals{
@@ -63,54 +62,54 @@ nav{
 }
 
 #biline-one{
-    color: white;
-    font-size: 16px
+  color: white;
+  font-size: 16px
 }
 
 #biline-two{
-    color: white;
-    font-size: 16px
+  color: white;
+  font-size: 16px
 }
 
 #org-found{
-    align-content: center;
-    width: 300px;
-    height: auto;
+  align-content: center;
+  width: 300px;
+  height: auto;
 }
 
 #lets-start{
-    align-content: center;
-    width: 300px;
-    height: auto;
+  align-content: center;
+  width: 300px;
+  height: auto;
 }
 
 #header-text{
-  font-size: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
 }
 @media only screen and (max-width: 720px) {
-    #header-text {
-    font-size: 40px
-    }
+  #header-text {
+  font-size: 40px
+  }
 }
 
 @media only screen and (max-width: 440px) {
-    #header-text {
-    font-size: 12px
-   }
+  #header-text {
+  font-size: 12px
+  }
 }
 
 #arrow-down{
   font-size: 50px;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
 }
 
 #employer-name{
@@ -121,35 +120,33 @@ nav{
   color: black
 }
 
-
 .icon{
-    background-color: white;
-    padding-top: 50px;
-    padding-bottom: 50px
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px
 }
 
 .jumbotron{
-background-color: black;
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
+  background-color: black;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 
-
 #hero-image{
-    background-image: url("../images/13215_labor_union_bw_ap_328.jpg");
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
+  background-image: url("../images/13215_labor_union_bw_ap_328.jpg");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 
 /*------------------------FOUND PAGE SECTION 2------------------*/
 #api-heroimage{
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
-    position: relative;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 #api-content{
@@ -184,23 +181,23 @@ background-color: black;
 }
 
 h3{
- font-size: 20px;
+  font-size: 20px;
   color: #abdc3b
 }
 
 #resources-heroimage{
-     width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 #resources-headertext{
-   font-size: 80px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white
+  font-size: 70px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
 }
 
 #resourse-links{
@@ -225,29 +222,29 @@ h3{
 
 /*------------------------NEW CAMPAIGN PAGE SECTION 1------------------*/
 #newcamp-heroimage{
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 #newcam-headertext{
-  font-size: 50px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white
+  font-size: 45px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white
 }
 
 #biline-bodytext{
-    font-size: 18px;
-    font-weight: lighter;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #last-section{
   width: 100%;
@@ -270,40 +267,41 @@ h3{
 }
 
 #join-header{
-   font-size: 70px;
+  font-size: 70px;
   color: #abdc3b;
 }
 
 #join-body{
   font-size: 15px;
   color: white;
-  
 }
+
 #join-button{
-    background-color: #fff0;
+  background-color: #fff0;
   border: solid;
   border-color: #abdc3b;
   color: white
 }
+
 #join-user-id{
-     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-     color:#abdc3b;
-font-size: 18px
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#abdc3b;
+  font-size: 18px
 }
 
 #join-email-id{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-     color:#abdc3b;
-font-size: 18px
+  color:#abdc3b;
+  font-size: 18px
 }
 
 #target-status{
-    background-color: #fff0;
+  background-color: #fff0;
   border: solid;
   border-color: #01b9ae;
   color: white;
-   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
- letter-spacing: 1PX
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1PX
 }
 
 /*------------------------BAR GRAPH------------------*/
@@ -343,24 +341,23 @@ font-size: 18px
 }
 
 #section-three{
-    background-image: url("../images/strike_medium_image.jpg");
-    width: 100%;
-    height: auto;
-    background-repeat: no-repeat;
+  background-image: url("../images/strike_medium_image.jpg");
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 .black-header{
-    background-color: black
-    height: 100px;
-    padding: 0px;
-    margin-bottom: 0px;
-    margin-top: 0px
+  background-color: black
+  height: 100px;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px
 }
 
-
 .small-logo{
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 #title-text{
@@ -381,83 +378,83 @@ font-size: 50px;
 }*/
 
 #sidebar-info{
-    background-color: #abdc3b;
-    margin-top: 20px;
-    float: left
-    margin-right: 30px;
-    border-radius: 10px;
-    padding-bottom: 15px;
-    padding-top: 10px;
-    margin-left:30px;
-    color: white
+  background-color: #abdc3b;
+  margin-top: 20px;
+  float: left
+  margin-right: 30px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  margin-left:30px;
+  color: white
 }
 
 #side-pic{
 	width: 100%;
 	height: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
 }
 
 #description{
-    padding-top: 60px;
-    padding-bottom: 50px
+  padding-top: 60px;
+  padding-bottom: 50px
 }
 
 #header-button {
-    color: #fff;
-    background-color: #abdc3b,
-    border-color: #abdc3b;
+  color: #fff;
+  background-color: #abdc3b,
+  border-color: #abdc3b;
 }
 
 .btn-green {
-    background-color: #abdc3b;
-    color: #fff;
-    border-radius: 3px;
+  background-color: #abdc3b;
+  color: #fff;
+  border-radius: 3px;
 }
 .btn-green:focus,
 .btn-green:hover {
-    background-color: #18a689;
-    color: #fff;
+  background-color: #18a689;
+  color: #fff;
 }
 .panel-footer {
-    padding: 0 15px;
-    border: none;
-    text-align: right;
-    background-color: #fff;
+  padding: 0 15px;
+  border: none;
+  text-align: right;
+  background-color: #fff;
 }
 
 #green-text{
-    color: #abdc3b
+  color: #abdc3b
 }
 
 #header-button{
-    border: solid; 
-    background: #00ff0100;
-    color: #abdc3b;
-    height:50px;
-    width: 300px;
-    margin-top:30px;
-    font-size: 15px
+  border: solid; 
+  background: #00ff0100;
+  color: #abdc3b;
+  height:50px;
+  width: 300px;
+  margin-top:30px;
+  font-size: 15px
 }
 
 hr{
-    color: black;
-    width: 30%;
+  color: black;
+  width: 30%;
 }
 
 p{
-    font-size: 15px
+  font-size: 15px
 }
 
 #circle {
-    width: 300px;
-    height: 300px;
-    background: black;
-    -moz-border-radius: 150px;
-    -webkit-border-radius: 150px;
-    border-radius: 150px;
+  width: 300px;
+  height: 300px;
+  background: black;
+  -moz-border-radius: 150px;
+  -webkit-border-radius: 150px;
+  border-radius: 150px;
 }
 
 #found-body {

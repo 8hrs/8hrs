@@ -208,7 +208,7 @@ h3{
   background-color: #fff0;
   border: solid;
   border-color: #abdc3b;
-  color: white
+  color: #abdc3b
 }
 
 .form-control{
@@ -302,6 +302,11 @@ h3{
   color: white;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: 1PX
+}
+
+#created-header{
+  font-size: 40px;
+  color: #abdc3b;
 }
 
 /*------------------------BAR GRAPH------------------*/

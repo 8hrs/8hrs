@@ -46,26 +46,35 @@ $(document).ready(function() {
                 email: emailInput.val().trim()
         }
       
-      // Don't do anything if the name fields hasn't been filled out
-      if (!employernameInput.val()) {
-        return;
-      }
-        upsertEmployer(employerData)
-        upsertCampaign(campaignData)
-        console.log(employerData)
-        console.log(campaignData)
+          // Don't do anything if the name fields hasn't been filled out
+          if (!employernameInput.val()) {
+            return;
+          }
+
+        let formData = {
+            employerData: employerData,
+            campaignData: campaignData,
+            userData: userData
+        }
+        console.log('formData', formData);
+
+        upsertEmployer(formData, showNewCampaign);// upsertCampaign, upsertUser)
         showNewCampaign(employerData.employerName);
   
     });
 
-    function showNewCampaign(employerName){
-        $.get(`/findCampaign/${employerName}`).done(function (data){
-            $("body").html(data);
+    function showNewCampaign(formData){
+        console.log('formData', formData);
+        let employerName = formData.employerData.employerName
+        $.get(`/findCampaign/${employerName}`).done(function (htmlStr){
+            var page = $(htmlStr);
+            return $("html").append(page);
         });
     }
 //this function is for create employer but the PUT part is not yet working
-    function upsertEmployer(employerData) {
-      $.post("/employers", employerData)
+    function upsertEmployer(formData, callback1, callback2) {
+        console.log('formData, callback1, callback2:', formData, callback1, callback2, " passed to upsertEmployer");
+      $.post("/employers", formData.employerData)
         .then(function(data) {
             var employerID = data.id
               console.log( "Sample of data:", data )
@@ -75,16 +84,21 @@ $(document).ready(function() {
                 data: "EmployerId = employerID",
                 success: function(data) {
                     console.log("SAMPLE OF PUT DATA:" , data);
+                    callback1(formData, callback1);
                 }
             }); 
         })  
     }
-    function upsertCampaign(campaignData) {
-        $.post("/campaigns", campaignData)
+
+    function upsertCampaign(formData, callback1, callback2) {
+        return console.log('formData, callback1, callback2:', formData, callback1, callback2, " passed to upsertCampaign");
+        // $.post("/campaigns", campaignData)
     }
-    function upsertUser(userData) {
-        $.post("/users", userData)
-        .then(formSubmitted)
+    function upsertUser(userData, callback1, callback2) {
+        return console.log("upsertCampaign called");
+
+        // $.post("/users", userData)
+        // .then(formSubmitted)
     }
     function formSubmitted () {
         alert("The form has been submitted")

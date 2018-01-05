@@ -65,21 +65,21 @@
   </div>
   <!--Navagation Bar End-->
 
-
   <!--Hero image-->
-  <div>
-    <img id="newcamp-heroimage" src="images/new-camapign-header.png">
-    <!--     <img id="lets-start" src="images/new-campaign-logo-09.png">
- -->
-    <h1 id="newcam-headertext" class="text-center">LET'S START
-      <BR>A CAMPAIGN</h1>
-    <p id="biline-bodytext" class="text-center">
-      <em>Congrats on taking the first step towards
-        <br>claiming your rights.
-        <br>Fill out this form to get the ball rolling,
-        <br> you will have a network of support in no time!</em>
-    </p>
-    <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+  <div id="resourse-links" class="row">
+    <div class="col-lg-12">
+      <img id="newcamp-heroimage" src="images/new-camapign-header.png">
+      <!-- <img id="lets-start" src="images/new-campaign-logo-09.png">-->
+      <h1 id="newcam-headertext" class="text-center">LET'S START
+        <BR>A CAMPAIGN</h1>
+      <p id="biline-bodytext" class="text-center">
+        <em>Congrats on taking the first step towards
+          <br>claiming your rights.
+          <br>Fill out this form to get the ball rolling,
+          <br> you will have a network of support in no time!</em>
+      </p>
+      <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+    </div>
   </div>
   <!--Hero image-->
 
@@ -288,7 +288,7 @@
           </select>
         </div>
 
-         <!-- Concerns - Checkboxes -->
+        <!-- Concerns - Checkboxes -->
         <label for="concerns-checkbox">6. Concerns</label>
         <div class="concerns-checkbox">
           <label>
@@ -312,7 +312,7 @@
         </div>
         <div class="concerns-checkbox">
           <label>
-            <input type="checkbox" id="workingconditions_id" value="workingconditions">Working Conditions</label>
+            <input type="checkbox" id="workingconditions_id" value="workingconditions"> Working Conditions</label>
         </div>
         <div class="concerns-checkbox">
           <label>
@@ -325,14 +325,15 @@
           <!-- Comment -->
           <div class="form-group">
             <label for="comment">7. What message would you like share with fellow colleagues? This is the first thing people will see about your
-              petition. Get their attention by entering a message that focuses on the change you’d like them to support.
+              petition. Get their attention by entering a message that focuses on the
+              <i>change</i> you’d like them to support.
             </label>
             <textarea class="form-control" rows="10" id="comment_id"></textarea>
           </div>
 
           <!-- Target Membership Goal -->
           <div class="form-group">
-            <label for="goal_id" class="control-label">8. Target Membership Goal</label>
+            <label for="goal_id" class="control-label">8. Target Membership Goal for this Campaign</label>
             <input type="text" class="form-control" id="goal_id" name="goal" placeholder="eg. 100">
           </div>
 
@@ -344,7 +345,7 @@
 
           <!-- Email -->
           <div class="form-group">
-            <label for="email_id" class="control-label">10. * Email</label>
+            <label for="email_id" class="control-label">10. * Email Address</label>
             <input type="text" class="form-control" id="email_id" name="email" placeholder="This email will be kept private">
           </div>
 

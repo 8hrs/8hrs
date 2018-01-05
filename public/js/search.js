@@ -24,37 +24,17 @@ $("#searchSubmit").on("click", function (event){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj){
-	$.get(`/findCampaign/${searchObj.employer}`).then(function (data){
-		//console.log('data', data);
-		let startOfHeadTag = data.indexOf("<head");
-		console.log('startOfHeadTag', startOfHeadTag);
-		let endOfHeadTag = startOfHeadTag + data.slice(startOfHeadTag).indexOf(">") + 1;
-		console.log('endOfHeadTag', endOfHeadTag);
-		let endOfHead = data.indexOf("</head");
-		console.log('endOfHead', endOfHead);
-		let head = data.slice(endOfHeadTag, endOfHead);
-
-		let startOfBodyTag = data.indexOf("<body");
-		let endOfBodyTag = startOfBodyTag + data.slice(startOfBodyTag).indexOf(">") + 1;
-		let endOfBody = data.indexOf("</body");
-		let body = data.slice(endOfBodyTag, endOfBody);
-		// console.log('end', end)
-		console.log("B-B-BBODY", body);
-		console.log("HEAD =", head);
-		$(document.head).empty();
-		$(document.body).empty();
-		$(document.head).html(head);
-		$(document.body).html(body);
+	$.get(`/findCampaign/${searchObj.employer}`).then(function (htmlStr){
+		if (!htmlStr){
+			return location = "/newcampaign";
+		}
+		return renderHTML(htmlStr);
 	});
 }
 
-// //Show found.handlebars
-// function openFoundView (data){
-//     if (render){
-//     	$("body").html(data);
-// 	}
-// 	return;
-// }
+function renderHTML(htmlStr){
+	return $("html").load(htmlStr);
+}
 
 //Performs an employer search through Glassdoor's api
 function searchGlassdoor (searchObj, callback){

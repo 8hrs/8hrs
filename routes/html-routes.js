@@ -15,7 +15,8 @@ module.exports = function(app) {
   });
 
  app.get("/newcampaign", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/newcampaign.html")); //path.join(__dirname, "/newcampaign.html"));
+    // res.sendFile(path.join(__dirname, "../public/newcampaign.html")); //path.join(__dirname, "/newcampaign.html"));
+    res.render("newcampaign");
   });
 
   app.get("/found", function(req, res) {

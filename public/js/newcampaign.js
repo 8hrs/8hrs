@@ -57,7 +57,7 @@ $(document).ready(function() {
             userData: userData
         }
         console.log('formData', formData);
-        upsertCampaign(formData, upsertEmployer, upsertUser, showNewCampaign);
+        upsertEmployer(formData, upsertCampaign, upsertUser, showNewCampaign);
   
     });
 
@@ -70,13 +70,22 @@ $(document).ready(function() {
 
 //this function is for create employer but the PUT part is not yet working
     function upsertEmployer(formData, callback, callback2, callback3) {
-        let employerData = formData.employerData;
-        $.post("/employers", employerData).done(function(){
-            return callback(formData, callback2, callback3);
+        var employerData = formData.employerData;
+        var employerName = employerData.employerName;
+        $.post("/employers", employerData).done(function(dbEmployer){
+            console.log('dbEmployer', dbEmployer);
+            if(dbEmployer){
+                var employerId = dbEmployer.id;
+                console.log('id sent to front:', employerId);
+                formData.campaignData.EmployerId = employerId;
+                console.log('formData', formData);
+                return callback(formData, callback2, callback3);
+            }  
         }).fail(function(){
             alert("Submission failed.");
             return location = "/newcampaign";
         });
+        
     }
 
     function upsertCampaign(formData, callback, callback2, callback3) {

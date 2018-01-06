@@ -1,3 +1,4 @@
+var db = require("../models");
 module.exports = function (sequelize, DataTypes) {
 	var Employer = sequelize.define("Employer", {
 

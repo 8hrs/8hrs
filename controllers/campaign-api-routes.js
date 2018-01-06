@@ -1,3 +1,5 @@
+const gd = require("../ext_api/glassdoor.js");
+const path = require("path");
 // Requiring our models
 var db = require("../models");
 
@@ -57,18 +59,18 @@ module.exports = function(app) {
         });
     });
 
-
     app.get("/findCampaign/:employerName", function(req, res) {
+        const employerName = decodeURIComponent(req.params.employerName);
         db.Employer.findOne({
             where: {
-                employerName: req.params.employerName
+                employerName: employerName
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
-            // console.log('dbEmployer', dbEmployer);
             if(dbEmployer){
-                const employer = dbEmployer.dataValues;
-                var campArray = [], camp, emps;
+                var employer = dbEmployer.dataValues;
+                var campArray = [];
+                var camp = {};
                 employer.Campaigns.forEach(function(campaign){
                     camp = campaign.dataValues;
                     camp.employer = employer.employerName || "";
@@ -78,11 +80,12 @@ module.exports = function(app) {
                     campArray.push(camp);
                 });
             }else{
+                //no campaigns found. status 204 used to signal frontend to load newcampaign.handlebars
                 return res.status(204).end();
             }
-                gd.employerQuery(camp.city = "", camp.state = "", camp.employer, function(data) {
+                gd.employerQuery(camp.city = "", camp.state = "", employerName, function(data) {
                     var gdEmployers = data.employers[0];
-                    if(! gdEmployers.exactMatch){
+                    if(false){//! gdEmployers.exactMatch){
                         //?
                         //emps = ?
                     }else{

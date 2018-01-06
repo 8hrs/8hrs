@@ -8,13 +8,13 @@ $(document).ready(function(){
 
 //Assigns user search input to variables and passes them as key/value
 //pairs in an object to the searchCampaigns function 
-$("#join-button").on("click", function(e){
-      alert("Thanks for joining!");
-      location = "/";
-    });
-    
+
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
+	if(!$("employer-name").val()){
+		console.log("no employer entered");
+		return location = "/";
+	}
 	let employer = $("#employer-name").val().trim();
 	let city  = $("#city").val().trim();
 	let state = $("#state-dropdown").text().slice(5);
@@ -24,7 +24,14 @@ $("#searchSubmit").on("click", function (event){
 		state: state
 	}
 	$("#exampleModal").toggle();
-	searchCampaigns (searchObj);
+	try{
+		searchCampaigns (searchObj);
+	}
+	catch(e){
+		console.log(e);
+		return location = "/";
+	}
+	
 });
 
 //Searches the database for existing campaigns associated with an employer

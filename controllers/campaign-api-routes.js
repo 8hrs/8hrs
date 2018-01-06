@@ -79,7 +79,6 @@ module.exports = function(app) {
                 });
             }else{
                 return res.status(204).end();
-                // return res.sendFile(path.join(__dirname, "../views/newcampaign.handlebars"));
             }
                 gd.employerQuery(camp.city = "", camp.state = "", camp.employer, function(data) {
                     var gdEmployers = data.employers[0];

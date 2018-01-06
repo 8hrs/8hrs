@@ -8,6 +8,11 @@ $(document).ready(function(){
 
 //Assigns user search input to variables and passes them as key/value
 //pairs in an object to the searchCampaigns function 
+$("#join-button").on("click", function(e){
+      alert("Thanks for joining!");
+      location = "/";
+    });
+    
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
 	let employer = $("#employer-name").val().trim();

@@ -1,4 +1,9 @@
-
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+  <script src="../public/js/found.js">
+  </script>
   <!--HAMBURGER SIDEBAR-->
   <nav role="navigation">
     <div id="menuToggle">
@@ -49,7 +54,7 @@
         <!--Title for the Employer Goes here-->
         {{#each campaigns}}
         <h1 id="campain-name" style="text-transform: uppercase;">{{campaignName}}</h1>
-        Employer:
+        <p>Employer:</p>
         <h1 id="employer">{{employer}}</h1>
         <p id="time-stamp" class="employer-body">
           <em>{{createdAt}}</em>
@@ -153,15 +158,15 @@
          <!-- User -->
           <div class="form-group">
             <label for="join-user-id" id="join-user-id" class="control-label">User Name</label>
-            <input type="text" class="form-control" name="user" placeholder="This name will be kept private and not displayed">
+            <input type="text" class="form-control" id="submitUser" name="user" placeholder="This name will be kept private and not displayed">
           </div>
 
           <!-- Email -->
           <div class="form-group">
             <label for="join-email-id" id="join-email-id" class="control-label">Email</label>
-            <input type="text" class="form-control" name="email" placeholder="This email will be kept private">
+            <input type="text" class="form-control" id="submitEmail" name="email" placeholder="This email will be kept private">
           </div>
-        <button id="join-button" type="submit" class="btn btn-primary">JOIN THIS CAMPAIGN!</button>
+        <button id="join-button" type="submit" class="btn btn-primary" onclick="join()">JOIN THIS CAMPAIGN!</button>
       </div>
       <div class="col-sm-6" id="target-bar-section">
         <div class="modal-div-canvas js-chart" style="width: 70%">
@@ -174,3 +179,9 @@
       </div>
     </div>
   </div>
+    <script type="text/javascript">
+    function join() {
+      console.log("CLICK");
+    }
+  </script>
+  

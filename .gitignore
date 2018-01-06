@@ -1,6 +1,4 @@
 node_modules
-homework_instructions.html
 app-env
 .DS_Store
-connection.js
-
+config_copy_ignored.json

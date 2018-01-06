@@ -8,7 +8,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const exhbs = require("express-handlebars");
-const ext_apiRoutes = require("./routes/ext-api-routes.js")
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -33,11 +32,10 @@ app.set("views", "./views/");
 
 // Routes
 // =============================================================
-app.use("/ext_api", ext_apiRoutes);
 require("./controllers/campaign-api-routes.js")(app);
 require("./controllers/user-api-routes.js")(app);
 require("./controllers/employer-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./controllers/html-routes.js")(app);
 console.log("app info:", app.__router);
 
 // Static directory

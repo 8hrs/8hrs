@@ -80,7 +80,7 @@ module.exports = function(app) {
                     campArray.push(camp);
                 });
             }else{
-                //no campaigns found. status 204 used to signal frontend to load newcampaign.handlebars
+                //no campaigns found. status 204 used to signal front end to load newcampaign.handlebars
                 return res.status(204).end();
             }
                 gd.employerQuery(camp.city = "", camp.state = "", employerName, function(data) {

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Start a Campaign</title>
+  <!-- Your platform (jquery) scripts. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Your platform (jquery) scripts. -->
+  <script src="https://surveyjs.azureedge.net/0.98.3/survey.jquery.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111282891-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111282891-1');
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body id="found-body">
+  <!--HAMBURGER SIDEBAR-->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="/">
+          <li>Home</li>
+        </a>
+        <a href="resources.html">
+          <li>Resources</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <!--HAMBURGER SIDEBAR END-->
+
+  <!--Top Black bar with logo-->
+  <div class="jumbotron text-center black-header">
+    <img class="small-logo" src="images/8hrs-layout-little-08.png">
+  </div>
+  <!--Navagation Bar End-->
+
+  <!--Hero image-->
+
+    <div>
+      <img id="newcamp-heroimage" src="images/new-camapign-header.png">
+      <!-- <img id="lets-start" src="images/new-campaign-logo-09.png">-->
+      <h1 id="newcam-headertext" class="text-center">LET'S START
+        <BR>A CAMPAIGN</h1>
+      <p id="biline-bodytext" class="text-center">
+        <em>Congrats on taking the first step towards
+          <br>claiming your rights.
+          <br>Fill out this form to get the ball rolling,
+          <br> you will have a network of support in no time!</em>
+      </p>
+      <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('form')"></span>
+    </div>
+  <!--Hero image-->
+
+  <!-- Survey Form -->
+  <div id="form" class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div id="surveyContainer">
+
+        <!-- Campaign Name-->
+        <div class="form-group">
+          <label for="campaign_name_id" class="control-label">1. * Campaign Name</label>
+          <input type="text" class="form-control" id="campaign_name_id" name="employer_name" placeholder="Campaign Name">
+        </div>
+
+        <!-- Employer Name-->
+        <div class="form-group">
+          <label for="employer_name_id" class="control-label">2. * Employer</label>
+          <input type="text" class="form-control" id="employer_name_id" name="employer_name" placeholder="Employer">
+        </div>
+
+        <!-- City -->
+        <div class="form-group">
+          <label for="city_id" class="control-label">3. * City</label>
+          <input type="text" class="form-control" id="city_id" name="city" placeholder="eg. Chicago">
+        </div>
+
+        <!-- State Dropdown -->
+        <div class="form-group">
+          <label for="state_id" class="control-label">4. * State</label>
+          <select class="form-control" id="state_id">
+            <option value="AL">AL - Alabama</option>
+            <option value="AK">AK - Alaska</option>
+            <option value="AZ">AZ - Arizona</option>
+            <option value="AR">AR - Arkansas</option>
+            <option value="CA">CA - California</option>
+            <option value="CO">CO - Colorado</option>
+            <option value="CO">CO - Connecticut</option>
+            <option value="DE">DE - Delaware</option>
+            <option value="DC">DC - District Of Columbia</option>
+            <option value="FL">FL - Florida</option>
+            <option value="GA">GA - Georgia</option>
+            <option value="HI">HI - Hawaii</option>
+            <option value="ID">ID - Idaho</option>
+            <option value="IL">IL - Illinois</option>
+            <option value="IN">IN - Indiana</option>
+            <option value="IA">IA - Iowa</option>
+            <option value="KS">KS - Kansas</option>
+            <option value="KY">KY - Kentucky</option>
+            <option value="LA">LA - Louisiana</option>
+            <option value="ME">ME - Maine</option>
+            <option value="MD">MD - Maryland</option>
+            <option value="MA">MA - Massachusetts</option>
+            <option value="MI">MI - Michigan</option>
+            <option value="MN">MN - Minnesota</option>
+            <option value="MS">MS - Mississippi</option>
+            <option value="MO">MO - Missouri</option>
+            <option value="MT">MT - Montana</option>
+            <option value="NE">NE - Nebraska</option>
+            <option value="NV">NV - Nevada</option>
+            <option value="NH">NH - New Hampshire</option>
+            <option value="NJ">NJ - New Jersey</option>
+            <option value="NM">NM - New Mexico</option>
+            <option value="NY">NY - New York</option>
+            <option value="NC">NC - North Carolina</option>
+            <option value="ND">ND - North Dakota</option>
+            <option value="OH">OH - Ohio</option>
+            <option value="OK">OK - Oklahoma</option>
+            <option value="OR">OR - Oregon</option>
+            <option value="PA">PA - Pennsylvania</option>
+            <option value="RI">RI - Rhode Island</option>
+            <option value="SC">SC - South Carolina</option>
+            <option value="SD">SD - South Dakota</option>
+            <option value="TN">TN - Tennessee</option>
+            <option value="TX">TX - Texas</option>
+            <option value="UT">UT - Utah</option>
+            <option value="VT">VT - Vermont</option>
+            <option value="VA">VA - Virginia</option>
+            <option value="WA">WA - Washington</option>
+            <option value="WV">WV - West Virginia</option>
+            <option value="WI">WI - Wisconsin</option>
+            <option value="WY">WY - Wyoming</option>
+          </select>
+        </div>
+
+        <!-- Industry Dropdown -->
+        <div class="form-group">
+          <label for="industry_id" class="control-label">5. Industry</label>
+          <select class="form-control" id="industry_id">
+            <option value="ind-1">Accounting</option>
+            <option value="ind-2">Advertising & Marketing</option>
+            <option value="ind-3">Aerospace & Defense</option>
+            <option value="ind-4">Airlines</option>
+            <option value="ind-5">Architectural & Engineering Services</option>
+            <option value="ind-6">Automotive Parts & Accessories Stores</option>
+            <option value="ind-7">Banks & Credit Unions</option>
+            <option value="ind-8">Beauty & Personal Accessories Stores</option>
+            <option value="ind-9">Biotech & Pharmaceuticals</option>
+            <option value="ind-10">Brokerage Services</option>
+            <option value="ind-11">Building & Personnel Services</option>
+            <option value="ind-12">Business Service Centers & Copy Shops</option>
+            <option value="ind-13">Cable, Internet & Telphone Providers</option>
+            <option value="ind-14">Car Rental</option>
+            <option value="ind-15">Casual Restaurants</option>
+            <option value="ind-16">Catering & Food Service Contractors</option>
+            <option value="ind-17">Chemical Manufacturing</option>
+            <option value="ind-18">College & Universities</option>
+            <option value="ind-19">Commercial Equipment Rental</option>
+            <option value="ind-20">Computer Hardware & Software</option>
+            <option value="ind-21">Construction</option>
+            <option value="ind-22">Consulting</option>
+            <option value="ind-23">Consumer Electronics & Applicances Stores</option>
+            <option value="ind-24">Consumer Product Rental</option>
+            <option value="ind-25">Consumer Products Manufacturing</option>
+            <option value="ind-26">Convenience Stores & Truck Stops</option>
+            <option value="ind-27">Department, Clothing, & Shoe Stores</option>
+            <option value="ind-28">Drug & Health Stores</option>
+            <option value="ind-29">Education Training Services</option>
+            <option value="ind-30">Electrical & Electronic Manufacturing</option>
+            <option value="ind-31">Energy</option>
+            <option value="ind-32">Enterprise Software & Network Solutions</option>
+            <option value="ind-33">Express Delivery Services</option>
+            <option value="ind-34">Fast-Food & Quick-Service Restaurants</option>
+            <option value="ind-35">Federal Agencies</option>
+            <option value="ind-36">Financial Analytics & Research</option>
+            <option value="ind-37">Financial Transaction Processing</option>
+            <option value="ind-38">Food & Beverage Manufacturing</option>
+            <option value="ind-39">Food & Beverage Stores</option>
+            <option value="ind-40">Food Production</option>
+            <option value="ind-41">Funeral Services</option>
+            <option value="ind-42">Gambling</option>
+            <option value="ind-43">Gas Stations</option>
+            <option value="ind-44">General Merchandise & Superstores</option>
+            <option value="ind-45">General Repair & Maintenance</option>
+            <option value="ind-46">Gift, Novelty & Souvenir Stores</option>
+            <option value="ind-47">Grantmaking Foundations</option>
+            <option value="ind-48">Grocery Stores & Supermarkets</option>
+            <option value="ind-49">Health Care Products Manufacturing</option>
+            <option value="ind-50">Health Care Services & Hospitals</option>
+            <option value="ind-51">Health Fundraising Organizations</option>
+            <option value="ind-52">Health, Beauty, Fitness</option>
+            <option value="ind-53">Home Centers & Hardware Stores</option>
+            <option value="ind-54">Home Furniture & Housewares Stores</option>
+            <option value="ind-55">Hotels, Motels, & Resorts</option>
+            <option value="ind-56">IT Services</option>
+            <option value="ind-57">ind-ustrial Manufacturing</option>
+            <option value="ind-58">Insurance Agencies & Brokerages</option>
+            <option value="ind-59">Insurance Carriers</option>
+            <option value="ind-60">Internet</option>
+            <option value="ind-61">Investment Banking & Asset Management</option>
+            <option value="ind-62">K-12 Education</option>
+            <option value="ind-63">Legal</option>
+            <option value="ind-64">Lending</option>
+            <option value="ind-65">Logistrics & Supply Chain</option>
+            <option value="ind-66">Media & Entertainment Retail Stores</option>
+            <option value="ind-67">Membership Organizations</option>
+            <option value="ind-68">Mining</option>
+            <option value="ind-69">Miscellaneous Manufacturing</option>
+            <option value="ind-70">Motion Picture Production & Distribution</option>
+            <option value="ind-71">Movie Theaters</option>
+            <option value="ind-72">Moving Services</option>
+            <option value="ind-73">Municipal Governments</option>
+            <option value="ind-74">Museums, Zoos & Amusement Parks</option>
+            <option value="ind-75">Music Production & Distribution</option>
+            <option value="ind-76">News Outlet</option>
+            <option value="ind-77">Office Supply Stores</option>
+            <option value="ind-78">Oil & Gas Exploration & Production</option>
+            <option value="ind-79">Oil & Gas Services</option>
+            <option value="ind-80">Other Retail Stores</option>
+            <option value="ind-81">Parking Lots & Garages</option>
+            <option value="ind-82">Passenger Rail</option>
+            <option value="ind-83">Performing Arts</option>
+            <option value="ind-84">Pet & Pet Supplies Stores</option>
+            <option value="ind-85">Photography</option>
+            <option value="ind-86">Preschool & Child Care</option>
+            <option value="ind-87">Publishing</option>
+            <option value="ind-88">Radio</option>
+            <option value="ind-89">Rail</option>
+            <option value="ind-90">Real Estate</option>
+            <option value="ind-91">Religious Organizations</option>
+            <option value="ind-92">Research & Development</option>
+            <option value="ind-93">Secuirty Services</option>
+            <option value="ind-94">Shipping</option>
+            <option value="ind-95">Social Assistance</option>
+            <option value="ind-96">Sporting Goods Stores</option>
+            <option value="ind-97">Sports & Recreation</option>
+            <option value="ind-98">Staffing & Outsourcing</option>
+            <option value="ind-99">State & Regional Agencies</option>
+            <option value="ind-100">Stock Exchanges</option>
+            <option value="ind-101">TV Broadcast & Cable Networks</option>
+            <option value="ind-102">Telecommunications Manufacturing</option>
+            <option value="ind-103">Telecommunications Services</option>
+            <option value="ind-104">Ticket Sales</option>
+            <option value="ind-105">Toy & Hobby Stores</option>
+            <option value="ind-106">Transportation Equipment Manufacturing</option>
+            <option value="ind-107">Transportation Management</option>
+            <option value="ind-108">Travel Agencies</option>
+            <option value="ind-109">Trucking</option>
+            <option value="ind-110">Upscale Restaurants</option>
+            <option value="ind-111">Utilities</option>
+            <option value="ind-112">Vehicle Dealers</option>
+            <option value="ind-113">Venture Capital & Private Equity</option>
+            <option value="ind-114">Veterinary Services</option>
+            <option value="ind-115">Video Games</option>
+            <option value="ind-116">Wholesale</option>
+            <option value="ind-117">Wood Product Manufacturing</option>
+          </select>
+        </div>
+
+        <!-- Concerns - Checkboxes -->
+        <label for="concerns-checkbox">6. Concerns</label>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="wages_id" value="wages"> Wages</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="benefits_id" value="benefits"> Benefits</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="genderequality_id" value="genderequality"> Gender equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="racialequality_id" value="racialequality"> Racial equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="ageequality_id" value="ageequality"> Age equality</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="workingconditions_id" value="workingconditions"> Working Conditions</label>
+        </div>
+        <div class="concerns-checkbox">
+          <label>
+            <input type="checkbox" id="other_id" value="other"> Other</label>
+        </div>
+        <p>
+        </p>
+        <p>
+
+          <!-- Comment -->
+          <div class="form-group">
+            <label for="comment">7. What message would you like share with fellow colleagues? This is the first thing people will see about your
+              petition. Get their attention by entering a message that focuses on the
+              <i>change</i> you’d like them to support.
+            </label>
+            <textarea class="form-control" rows="10" id="comment_id"></textarea>
+          </div>
+
+          <!-- Target Membership Goal -->
+          <div class="form-group">
+            <label for="goal_id" class="control-label">8. Target Membership Goal for this Campaign</label>
+            <input type="text" class="form-control" id="goal_id" name="goal" placeholder="eg. 100">
+          </div>
+
+          <!-- User -->
+          <div class="form-group">
+            <label for="user_name_id" class="control-label">9. * User Name</label>
+            <input type="text" class="form-control" id="user_name_id" name="user" placeholder="This name will be kept private and not displayed">
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email_id" class="control-label">10. * Email Address</label>
+            <input type="text" class="form-control" id="email_id" name="email" placeholder="This email will be kept private">
+          </div>
+
+          <div>
+            <button id="submit-button" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">SUBMIT</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Your Campaign has been created!
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"><a href="index.html">Close</button></a>
+          <button type="button" id="inviteOthers" class="btn btn-default">Invite others!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function scroll_to_div(div_id) {
+      $('html,body').animate({
+        scrollTop: $("#" + div_id).offset().top
+      },
+        'slow');
+      console.log("this is the scroll click")
+    }
+  </script>
+  <script src="/js/newcampaign.js"></script>
+
+</body>
+
+</html>

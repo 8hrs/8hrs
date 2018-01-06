@@ -57,7 +57,8 @@ module.exports = function(app) {
                     campArray.push(camp);
                 });
             }else{
-                return res.send(false);
+                return res.status(204).end();
+                // return res.sendFile(path.join(__dirname, "../views/newcampaign.handlebars"));
             }
                 gd.employerQuery(camp.city = "", camp.state = "", camp.employer, function(data) {
                     var gdEmployers = data.employers[0];
@@ -70,22 +71,13 @@ module.exports = function(app) {
                                 campArray[i][key] = gdEmployers[key];
                             }
                         }
-                        let campArrayString = JSON.stringify(campArray);
-                        console.log('campArrayString', campArrayString);
-                        res.locals = campArray;
-                        return res.redirect("/found");
-                        //return res.render("found", {campaigns: campArray})
+                        return res.render("found", {campaigns: campArray})
                     }
                 });
             });
     });
 
-    app.get("/found", function(req, res) {
-        console.log("/found/:campArrayString called")
-        var campArray = res.locals;
-        console.log('campArray', campArray);
-        return res.render("found", {campaigns: campArray});
-    });
+
 
 
 

@@ -24,18 +24,19 @@ $("#searchSubmit").on("click", function (event){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj){
-	$.get(`/findCampaign/${searchObj.employer}`).then(function (htmlStr){
-		if (!htmlStr){
-			return location = "/newcampaign";
-		}
-		console.log('htmlStr', htmlStr);
-		return renderHTML(htmlStr);
+	// $.get(`/findCampaign/${searchObj.employer}`).then(function (htmlStr){
+	// 	if (!htmlStr){
+	// 		return location = "/newcampaign";
+	// 	}
+	// 	return renderHTML(htmlStr);
 		
-	});
-}
-
-function renderHTML(htmlStr){
-	return $("html").load(htmlStr);
+	// });
+	$("html").load(`/findCampaign/${searchObj.employer}`, function(response, status){
+		console.log('status', status);
+		if(status === "nocontent"){
+			location = "/newcampaign";
+		}
+	});//, `${searchObj.employer}`);
 }
 
 //Performs an employer search through Glassdoor's api

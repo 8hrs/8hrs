@@ -65,7 +65,11 @@ $(document).ready(function() {
         console.log("showNewCampaign() called");
         let employerName = formData.employerData.employerName;
         console.log('employerName', employerName);
-        return $("html").load(`/findCampaign/${employerName}`);
+        $("html").load(`/findCampaign/${employerName}`, function(response, status){
+        if(status === "nocontent"){
+            $("#exampleModal").show();
+        }
+    });
     }
 
 //this function is for create employer but the PUT part is not yet working
@@ -83,7 +87,7 @@ $(document).ready(function() {
             }  
         }).fail(function(){
             alert("Submission failed.");
-            return location = "/newcampaign";
+            return location.reload(true);
         });
         
     }

@@ -62,7 +62,7 @@ module.exports = function(app) {
     });
 
     app.get("/findCampaign/:employerName", function(req, res) {
-        console.log("****",req.params);
+        console.log("req.params", req.params);
         const employerName = decodeURI(req.params.employerName);
         db.Employer.findOne({
             where: {

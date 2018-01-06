@@ -24,7 +24,8 @@ $("#searchSubmit").on("click", function (event){
 
 //Searches the database for existing campaigns associated with an employer
 function searchCampaigns (searchObj){
-	$("html").load(`/findCampaign/${searchObj.employer}`, function(response, status){
+	var employer = encodeURI(searchObj.employer);
+	$("html").load(`/findCampaign/${employer}`, function(response, status){
 		if(status === "nocontent"){
 			location = "/newcampaign";
 		}

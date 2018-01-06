@@ -1,5 +1,7 @@
 const gd = require("../ext_api/glassdoor.js");
 const path = require("path");
+const bodyParser = require("body-parser");
+
 // Requiring our models
 var db = require("../models");
 
@@ -60,7 +62,8 @@ module.exports = function(app) {
     });
 
     app.get("/findCampaign/:employerName", function(req, res) {
-        const employerName = decodeURIComponent(req.params.employerName);
+        console.log("****",req.params);
+        const employerName = decodeURI(req.params.employerName);
         db.Employer.findOne({
             where: {
                 employerName: employerName
@@ -69,6 +72,7 @@ module.exports = function(app) {
         }).then(function(dbEmployer) {
             if(dbEmployer){
                 var employer = dbEmployer.dataValues;
+                console.log('employer.city', employer.city);
                 var campArray = [];
                 var camp = {};
                 employer.Campaigns.forEach(function(campaign){
@@ -94,7 +98,9 @@ module.exports = function(app) {
                                 campArray[i][key] = gdEmployers[key];
                             }
                         }
+                        console.log('campArray', campArray);
                         return res.render("found", {campaigns: campArray})
+                        
                     }
                 });
             });

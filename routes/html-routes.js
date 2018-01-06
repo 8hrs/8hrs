@@ -18,5 +18,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/newcampaign.html")); //path.join(__dirname, "/newcampaign.html"));
   });
 
+  app.get("/found", function(req, res) {
+      console.log("/found called");
+      res.status(200).end()
+      // var campArray = res.locals;
+      // console.log('campArray', campArray);
+      // return res.render("found", {campaigns: campArray});
+  });
 
 };

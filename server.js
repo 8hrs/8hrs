@@ -29,8 +29,7 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", "./views/");
 
-// Static directory
-app.use(express.static("public"));
+
 
 // Routes
 // =============================================================
@@ -40,6 +39,10 @@ require("./controllers/user-api-routes.js")(app);
 require("./controllers/employer-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 console.log("app info:", app.__router);
+
+// Static directory
+app.use(express.static("public"));
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {

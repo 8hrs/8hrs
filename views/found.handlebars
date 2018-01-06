@@ -49,18 +49,20 @@
         <!--Title for the Employer Goes here-->
         {{#each campaigns}}
         <h1 id="campain-name" style="text-transform: uppercase;">{{campaignName}}</h1>
+        Employer:
         <h1 id="employer">{{employer}}</h1>
         <p id="time-stamp" class="employer-body">
           <em>{{createdAt}}</em>
         </p>
         <!--City, State-->
         <p id="location" class="employer-body">
-          <em>{{city}}, {{state}}</em>
+          <em>{{city}} {{state}}</em>
         </p>
         <!--Industry-->
         <p id="industry" class="employer-body">{{industry}}</p>
 
         <!--List of concerns-->
+        Worker Concerns:
         {{#if wages}}
           <li id="concern-list" class="employer-body">Wages</li>
         {{/if}}
@@ -112,6 +114,7 @@
         </h3>
         <!--Message to colleagues-->
         <p class="api-messagetocolleagues">
+        Review Title:
         {{featuredReview.headline}}</p>
         <p class="api-messagetocolleagues">
         Rating: {{featuredReview.overall}}

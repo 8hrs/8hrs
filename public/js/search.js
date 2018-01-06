@@ -11,10 +11,6 @@ $(document).ready(function(){
 
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
-	if(!$("employer-name").val()){
-		console.log("no employer entered");
-		return location = "/";
-	}
 	let employer = $("#employer-name").val().trim();
 	let city  = $("#city").val().trim();
 	let state = $("#state-dropdown").text().slice(5);
@@ -38,6 +34,7 @@ $("#searchSubmit").on("click", function (event){
 function searchCampaigns (searchObj){
 	var employer = encodeURI(searchObj.employer);
 	$("html").load(`/findCampaign/${employer}`, function(response, status){
+		console.log('status', status);
 		if(status === "nocontent"){
 			location = "/newcampaign";
 		}

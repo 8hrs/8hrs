@@ -44,7 +44,7 @@ module.exports = function(app) {
             },
             include: [db.Campaign]
         }).then(function(dbEmployer) {
-            console.log('dbEmployer', dbEmployer);
+            // console.log('dbEmployer', dbEmployer);
             if(dbEmployer){
                 const employer = dbEmployer.dataValues;
                 var campArray = [], camp, emps;
@@ -57,7 +57,7 @@ module.exports = function(app) {
                     campArray.push(camp);
                 });
             }else{
-                return res.send(false);//res.render("/newcampaign")//res.sendFile(path.join(__dirname, "../public/newcampaign.html")); 
+                return res.send(false);
             }
                 gd.employerQuery(camp.city = "", camp.state = "", camp.employer, function(data) {
                     var gdEmployers = data.employers[0];
@@ -70,12 +70,27 @@ module.exports = function(app) {
                                 campArray[i][key] = gdEmployers[key];
                             }
                         }
-                        console.log("campArray = ", campArray);
-                        return res.render("found", {title: "8hrs *", campaigns: campArray})
+                        let campArrayString = JSON.stringify(campArray);
+                        console.log('campArrayString', campArrayString);
+                        res.locals = campArray;
+                        return res.redirect("/found");
+                        //return res.render("found", {campaigns: campArray})
                     }
                 });
             });
     });
+
+    app.get("/found", function(req, res) {
+        console.log("/found/:campArrayString called")
+        var campArray = res.locals;
+        console.log('campArray', campArray);
+        return res.render("found", {campaigns: campArray});
+    });
+
+
+
+
+
 
 //GOOD find employer by employer ID
     app.get("/employers/:id", function(req, res) {

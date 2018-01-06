@@ -28,7 +28,9 @@ function searchCampaigns (searchObj){
 		if (!htmlStr){
 			return location = "/newcampaign";
 		}
+		console.log('htmlStr', htmlStr);
 		return renderHTML(htmlStr);
+		
 	});
 }
 

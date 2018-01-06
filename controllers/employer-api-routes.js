@@ -1,4 +1,7 @@
 const db = require("../models");
+const Sequelize = require("sequelize");
+console.log('db.sequelize.query', db.sequelize.query);
+
 console.log("employer-api-routes.js loaded.");
 module.exports = function(app) {
 
@@ -12,16 +15,14 @@ module.exports = function(app) {
             if(! dbEmployer){
                 db.Employer.create(req.body)
                 .then(function(dbEmployer) {
-                    res.status(201).end();
-                    // res.json(dbEmployer);
+                    return res.send(dbEmployer);
                 });
             }else{
-                return console.log("Employer already in database");
+                console.log("Employer already in database");
+                return res.json(dbEmployer);
             }
-
-        })
-        
-});
+        });
+    });
 
 //GOOD find all employers
     app.get("/employers", function(req, res) {

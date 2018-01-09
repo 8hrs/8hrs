@@ -16,6 +16,8 @@ $(document).ready(function() {
     var otherInput = $("#other_id");
     var commentInput = $("#comment_id");
     var goalInput = $("#goal_id");
+    var usernameInput = $("#user_name_id");
+    var emailInput = $("#email_id");
 
     $("#submit-button").on("click", function (){
         event.preventDefault();
@@ -38,40 +40,82 @@ $(document).ready(function() {
                 message: commentInput.val().trim(),
                 targetSignup: goalInput.val().trim()
         }
+
+        var userData = {
+                userName: usernameInput.val().trim(),
+                email: emailInput.val().trim()
+        }
       
-      // Don't do anything if the name fields hasn't been filled out
-      if (!employernameInput.val()) {
-        return;
-      }
-        upsertEmployer(employerData)
-        upsertCampaign(campaignData)
-        console.log(employerData)
-        console.log(campaignData)
+          // Don't do anything if the name fields hasn't been filled out
+          if (!employernameInput.val()) {
+            return;
+          }
+
+        let formData = {
+            employerData: employerData,
+            campaignData: campaignData,
+            userData: userData
+        }
+        console.log('formData', formData);
+        upsertEmployer(formData, upsertCampaign, upsertUser, showNewCampaign);
   
-    })
+    });
+
+    function showNewCampaign(formData){
+        console.log("showNewCampaign() called");
+        let employerName = formData.employerData.employerName;
+        console.log('employerName', employerName);
+        $("html").load(`/findCampaign/${employerName}`, function(response, status){
+        if(status === "nocontent"){
+            $("#exampleModal").show();
+        }
+    });
+    }
 
 //this function is for create employer but the PUT part is not yet working
-    function upsertEmployer(employerData) {
-      $.post("/employers", employerData)
-        .then(function(data) {
-            var employerID = data.id
-              console.log( "Sample of data:", data )
-              $.ajax({
-                url: '/campaigns/',
-                type: 'PUT',
-                data: "EmployerId = employerID",
-                success: function(data) {
-                    console.log("SAMPLE OF PUT DATA:" , data);
-                }
-            }); 
-        })  
+    function upsertEmployer(formData, callback, callback2, callback3) {
+        var employerData = formData.employerData;
+        var employerName = employerData.employerName;
+        $.post("/employers", employerData).done(function(dbEmployer){
+            console.log('dbEmployer', dbEmployer);
+            if(dbEmployer){
+                var employerId = dbEmployer.id;
+                console.log('id sent to front:', employerId);
+                formData.campaignData.EmployerId = employerId;
+                console.log('formData', formData);
+                return callback(formData, callback2, callback3);
+            }  
+        }).fail(function(){
+            alert("Submission failed.");
+            return location.reload(true);
+        });
+        
     }
-    function upsertCampaign(campaignData) {
-        $.post("/campaigns", campaignData)
+
+    function upsertCampaign(formData, callback, callback2, callback3) {
+        let campaignData = formData.campaignData;
+        $.post("/campaigns", campaignData).done(function(){
+            return callback(formData, callback2, callback3);
+        }).fail(function(){
+            alert("Submission failed.");
+            return location = "/newcampaign";
+        });
     }
-    function getEmployers () {
+
+    function upsertUser(formData, callback, callback2, callback3) {
+        let userData = formData.userData;
+        $.post("/users", userData).done(function(){
+            return callback(formData, callback2, callback3);
+        }).fail(function(){
+            alert("Submission failed.");
+            return location = "/newcampaign";
+        });
+    }
+
+    function formSubmitted () {
         alert("The form has been submitted")
     }
+
 
 });//document.ready
   

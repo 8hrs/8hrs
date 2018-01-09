@@ -7,8 +7,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const handlebars = require("express-handlebars");
-const ext_apiRoutes = require("./routes/ext-api-routes.js")
+const exhbs = require("express-handlebars");
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -24,20 +23,24 @@ app.use(bodyParser.text());
 // app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Handlebars
-app.engine("handlebars", handlebars({defaultLayout: "main"}));
+const hbs = exhbs.create({defaultLayout: "main"})
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set("views", "./views/");
+
+
+
+// Routes
+// =============================================================
+require("./controllers/campaign-api-routes.js")(app);
+require("./controllers/user-api-routes.js")(app);
+require("./controllers/employer-api-routes.js")(app);
+require("./controllers/html-routes.js")(app);
+console.log("app info:", app.__router);
 
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-app.use("/ext_api", ext_apiRoutes);
-require("./controllers/campaign-api-routes.js")(app);
-require("./controllers/user-api-routes.js")(app);
-require("./controllers/employer-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
-console.log("app info:", app.__router);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {

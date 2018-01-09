@@ -1,3 +1,7 @@
+const gd = require("../ext_api/glassdoor.js");
+const path = require("path");
+const bodyParser = require("body-parser");
+
 // Requiring our models
 var db = require("../models");
 
@@ -56,4 +60,52 @@ module.exports = function(app) {
             res.json(dbCampaign);
         });
     });
+
+    app.get("/findCampaign/:employerName", function(req, res) {
+        console.log("req.params", req.params);
+        const employerName = decodeURI(req.params.employerName);
+        db.Employer.findOne({
+            where: {
+                employerName: employerName
+            },
+            include: [db.Campaign]
+        }).then(function(dbEmployer) {
+            if(dbEmployer){
+                var employer = dbEmployer.dataValues;
+                console.log('employer.city', employer.city);
+                var campArray = [];
+                var camp = {};
+                employer.Campaigns.forEach(function(campaign){
+                    camp = campaign.dataValues;
+                    camp.employer = employer.employerName || "";
+                    camp.city = employer.city || "";
+                    camp.state = employer.state || "";
+                    camp.industry = employer.industry;
+                    campArray.push(camp);
+                });
+            }else{
+                //no campaigns found. status 204 used to signal front end to load newcampaign.handlebars
+                return res.status(204).end();
+            }
+                gd.employerQuery(camp.city = "", camp.state = "", employerName, function(data) {
+                    var gdEmployers = data.employers[0];
+                    if(false){//! gdEmployers.exactMatch){
+                        //?
+                        //emps = ?
+                    }else{
+                        for (key in gdEmployers){
+                            for (let i = 0; i < campArray.length; i ++){
+                                campArray[i][key] = gdEmployers[key];
+                            }
+                        }
+                        console.log('campArray', campArray);
+                        return res.render("found", {campaigns: campArray})
+                        
+                    }
+                });
+            });
+    });
+
 };
+
+

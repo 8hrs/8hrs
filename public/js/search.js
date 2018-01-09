@@ -8,10 +8,11 @@ $(document).ready(function(){
 
 //Assigns user search input to variables and passes them as key/value
 //pairs in an object to the searchCampaigns function 
+
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
-	let employer = $("#employer-name").val();
-	let city  = $("#city").val();
+	let employer = $("#employer-name").val().trim();
+	let city  = $("#city").val().trim();
 	let state = $("#state-dropdown").text().slice(5);
 	let searchObj = {
 		employer: employer,
@@ -19,36 +20,25 @@ $("#searchSubmit").on("click", function (event){
 		state: state
 	}
 	$("#exampleModal").toggle();
-	searchCampaigns (searchObj, openFoundView);
-
-
-
-	//, function(result){
-		// console.log(result);
-	//});
-	// searchGlassdoor(searchObj, function(result){
-	// 	console.log("result", result);
-	// });
+	try{
+		searchCampaigns (searchObj);
+	}
+	catch(e){
+		console.log(e);
+		return location = "/";
+	}
+	
 });
 
 //Searches the database for existing campaigns associated with an employer
-function searchCampaigns (searchObj, callback){
-	$.get(`/findCampaign/${searchObj.employer}`).done(function (data){
-		console.log("sending get request");
-		console.log("* data = ", data);
-		const existingCampaigns = data;//data[0].Campaigns;
-		console.log('typeof existingCampaigns', typeof existingCampaigns)
-		if(callback){
-			return callback(existingCampaigns);
+function searchCampaigns (searchObj){
+	var employer = encodeURI(searchObj.employer);
+	$("html").load(`/findCampaign/${employer}`, function(response, status){
+		console.log('status', status);
+		if(status === "nocontent"){
+			location = "/newcampaign";
 		}
 	});
-}
-
-//Show found.handlebars
-function openFoundView (data, searchObj){
-    console.log('~ data', data);
-    $("body").html(data);
-    // searchGlassdoor();
 }
 
 //Performs an employer search through Glassdoor's api

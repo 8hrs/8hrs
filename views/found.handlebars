@@ -1,3 +1,9 @@
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+  <script src="../public/js/found.js">
+  </script>
   <!--HAMBURGER SIDEBAR-->
   <nav role="navigation">
     <div id="menuToggle">
@@ -6,7 +12,7 @@
       <span></span>
       <span></span>
       <ul id="menu">
-        <a href="index.html">
+        <a href="/">
           <li>Home</li>
         </a>
         <a href="resources.html">
@@ -27,9 +33,9 @@
   <!--Hero image-->
   <div>
     <img id="found-heroimage" src="images/found-header.png">
-{{!--     <h1 id="header-text" class="text-center">WE FOUND
+    <h1 id="header-text" class="text-center">WE FOUND
       <BR>YOUR
-      <BR>EMPLOYER</h1> --}}
+      <BR>EMPLOYER</h1>
     <span id="arrow-down" class="glyphicon glyphicon-menu-down" aria-hidden="true" onclick="scroll_to_div('eighthr-content')"></span>
   </div>
   <!--Hero image-->
@@ -48,45 +54,41 @@
         <!--Title for the Employer Goes here-->
         {{#each campaigns}}
         <h1 id="campain-name" style="text-transform: uppercase;">{{campaignName}}</h1>
-        <h1 id="employer"> {{employer}} </h1>
-        <p id="time-stamp" class="empolyer-body">
+        <p>Employer:</p>
+        <h1 id="employer">{{employer}}</h1>
+        <p id="time-stamp" class="employer-body">
           <em>{{createdAt}}</em>
         </p>
         <!--City, State-->
-        <p id="location" class="empolyer-body">
-          <em>{{city}}, {{state}}</em>
+        <p id="location" class="employer-body">
+          <em>{{city}} {{state}}</em>
         </p>
         <!--Industry-->
-        <p id="industry" class="empolyer-body">{{industry}}</p>
+        <p id="industry" class="employer-body">{{industry}}</p>
 
         <!--List of concerns-->
-        <h3>List of Concerns</h3>
+        Worker Concerns:
         {{#if wages}}
-          <li id="concern-list" class="empolyer-body">Wages</li>
+          <li id="concern-list" class="employer-body">Wages</li>
         {{/if}}
         {{#if benefits}}
-          <li id="concern-list" class="empolyer-body">Benefits</li>
+          <li id="concern-list" class="employer-body">Benefits</li>
         {{/if}}
         {{#if genderEquality}}
-          <li id="concern-list" class="empolyer-body">Gender Equality</li>
+          <li id="concern-list" class="employer-body">Gender Equality</li>
         {{/if}}
         {{#if racialEquality}}
-          <li id="concern-list" class="empolyer-body">Racial Equality</li>
+          <li id="concern-list" class="employer-body">Racial Equality</li>
         {{/if}}
         {{#if ageEquality}}
-          <li id="concern-list" class="empolyer-body">Age Equality</li>
+          <li id="concern-list" class="employer-body">Age Equality</li>
         {{/if}}
         {{#if workingConditions}}
-          <li id="concern-list" class="empolyer-body">Working Conditions</li>
+          <li id="concern-list" class="employer-body">Working Conditions</li>
         {{/if}}
-{{!--         <li id="concern-list" class="empolyer-body">Wages</li>
-        <li id="concern-list" class="empolyer-body">Racial Equality</li>
-        <li id="concern-list" class="empolyer-body">Working Conditions</li>
-        <li id="concern-list" class="empolyer-body">Benefits</li> --}}
+
         <!--Message to colleagues-->
-        <h3>Why we started this campaign</h3>
-        <p id="messagetocolleagues" class="empolyer-body">{{message}}</p>
-          
+        <p id="messagetocolleagues" class="employer-body">{{message}}</p>
       </div>
     </div>
   </div>
@@ -115,8 +117,9 @@
           <em>Ready to join the movement but need a little more info for support?
             <br>Check out what some other online communities are reporting.</em>
         </h3>
-        
+        <!--Message to colleagues-->
         <p class="api-messagetocolleagues">
+        Review Title:
         {{featuredReview.headline}}</p>
         <p class="api-messagetocolleagues">
         Rating: {{featuredReview.overall}}
@@ -137,7 +140,8 @@
       </div>
     </div>
   </div>
-  {{/each}}
+        {{/each}}
+
   <!--ABOUT THIS APP INFO-->
 
 
@@ -151,7 +155,18 @@
           <em>Now that you know a little more about this campaign towards getting organized, take the next step and participate.
             Join this campaign and become a part of a network of change!</em>
         </p>
-        <button id="join-button" type="submit" class="btn btn-primary">JOIN THIS CAMPAIGN!</button>
+         <!-- User -->
+          <div class="form-group">
+            <label for="join-user-id" id="join-user-id" class="control-label">User Name</label>
+            <input type="text" class="form-control" id="submitUser" name="user" placeholder="This name will be kept private and not displayed">
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="join-email-id" id="join-email-id" class="control-label">Email</label>
+            <input type="text" class="form-control" id="submitEmail" name="email" placeholder="This email will be kept private">
+          </div>
+        <button id="join-button" type="submit" class="btn btn-primary" onclick="join()">JOIN THIS CAMPAIGN!</button>
       </div>
       <div class="col-sm-6" id="target-bar-section">
         <div class="modal-div-canvas js-chart" style="width: 70%">
@@ -165,39 +180,5 @@
     </div>
   </div>
 
-  <!--ABOUT THIS APP INFO-->
-
-
-
-  <!--This is the chart I commentted it out sinc it's not working
-      <div id="pie-mold" class="yummy-pie" data-percentage="60" data-baking-time="1200"></div>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-      <script src="js/chart.js"></script>
-
--->
-  <!--javascript-->
-  <script type="text/javascript">
-    function scroll_to_div(div_id) {
-      $('html,body').animate({
-        scrollTop: $("#" + div_id).offset().top
-      },
-        'slow');
-      console.log("this is the scroll click")
-    }
-
-
-    function move() {
-      var elem = document.getElementById("myBar");
-      var width = 1;
-      var id = setInterval(frame, 10);
-      function frame() {
-        if (width >= 60) {
-          clearInterval(id);
-        } else {
-          width++;
-          elem.style.width = width + '%';
-        }
-      }
-    }
-
   </script>
+  

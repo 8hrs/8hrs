@@ -8,7 +8,6 @@ $(document).ready(function(){
 
 //Assigns user search input to variables and passes them as key/value
 //pairs in an object to the searchCampaigns function 
-
 $("#searchSubmit").on("click", function (event){
 	event.preventDefault();
 	let employer = $("#employer-name").val().trim();
@@ -79,6 +78,7 @@ function scrollToDiv(div_id) {
   console.log("this is the scroll click...")
 }
 
+//Open modal
 $("#header-button-modal").on("click", function(){
 	console.log("click");
 	$("#exampleModal").toggle();

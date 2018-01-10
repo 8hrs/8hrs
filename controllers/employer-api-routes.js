@@ -34,9 +34,7 @@ module.exports = function(app) {
             include: [db.Campaign]
         }).then(function(dbEmployer) {
             try{
-                let employer = dbEmployer.dataValues;
-                
-                // console.log('employer', employer);
+                let employer = dbEmployer.dataValues;           
                 let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
                 campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
                     camp = campaign.dataValues;
@@ -54,7 +52,6 @@ module.exports = function(app) {
                 try{
                     console.log("EMPLOYER=",camp.employer);
                     gd.employerQuery(camp.city, camp.state, camp.employer, function (data){
-                        // data.employers.forEach(function (employer){
                         let emp = data.employers[0];
                         if(emp.exactMatch){
                             for (key in emp){

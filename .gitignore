@@ -1,5 +1,4 @@
 node_modules
 app-env
 .DS_Store
-config_copy_ignored.json
-oldfiles/
+config-copy-ignored.json

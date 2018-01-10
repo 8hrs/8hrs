@@ -33,6 +33,51 @@ module.exports = function(app) {
         });
     });
 
+//This big ugly function searches for existing campaigns and then grabs some
+//data from glassdoor if one is found, and then renders found.handlebars with
+//campaign and glassdoor data. If not found, redirects to newcampaign.html
+    app.get("/findCampaign/:employerName", function(req, res) {
+        var campArray = [], resultsArray = [], camp;
+        db.Employer.findOne({
+            where: {
+                employerName: req.params.employerName
+            },
+            include: [db.Campaign]
+        }).then(function(dbEmployer) {
+            try{
+                let employer = dbEmployer.dataValues;           
+                let campaignsInReallyAnnoyingDataStructure = employer.Campaigns;
+                campaignsInReallyAnnoyingDataStructure.forEach(function(campaign){
+                    camp = campaign.dataValues;
+                    camp.employer = employer.employerName || "";
+                    camp.city = employer.city || "";
+                    camp.state = employer.state || "";
+                    camp.industry = employer.industry;
+                    campArray.push(camp);
+                });
+            }
+            catch(error){
+                console.log("no matching campaign was found");
+            }
+            }).then(function (){
+                try{
+                    console.log("EMPLOYER=",camp.employer);
+                    gd.employerQuery(camp.city, camp.state, camp.employer, function (data){
+                        let emp = data.employers[0];
+                        if(emp.exactMatch){
+                            for (key in emp){
+                                camp[key] = emp[key];
+                            }
+                        }
+                    console.log('camp', camp);
+                    res.render("found", {campaigns: campArray});
+                    });
+                }
+                catch(error){
+                    return res.sendFile(path.join(__dirname, "../public/newcampaign.html"));
+                }
+            });
+    });
 
 //GOOD find employer by employer ID
     app.get("/employers/:id", function(req, res) {

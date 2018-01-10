@@ -90,8 +90,6 @@ module.exports = function(app) {
                 gd.employerQuery(camp.city = "", camp.state = "", employerName, function(data) {
                     var gdEmployers = data.employers[0];
                     if(false){//! gdEmployers.exactMatch){
-                        //?
-                        //emps = ?
                     }else{
                         for (key in gdEmployers){
                             for (let i = 0; i < campArray.length; i ++){

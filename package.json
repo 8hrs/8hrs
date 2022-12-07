@@ -25,7 +25,7 @@
   "homepage": "https://github.com/8hrs/8hrs#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.1",
     "request": "^2.83.0",
